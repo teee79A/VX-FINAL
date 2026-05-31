@@ -1,0 +1,76 @@
+[
+  {
+    "taskId": "sec:threat-model",
+    "taskName": "Threat Model Analysis",
+    "inputs": {
+      "sector": "cryptocurrency"
+    },
+    "status": "failed",
+    "durationMs": 426,
+    "dataSources": [
+      "cve-api",
+      "llm-analysis"
+    ],
+    "timestamp": "2026-04-18T01:58:35.616Z"
+  },
+  {
+    "taskId": "rev:market-analysis",
+    "taskName": "Market Analysis",
+    "inputs": {
+      "market": "AI agents"
+    },
+    "status": "failed",
+    "durationMs": 1165,
+    "dataSources": [
+      "hackernews-api",
+      "github-trending",
+      "llm-analysis"
+    ],
+    "timestamp": "2026-04-18T01:58:48.993Z"
+  },
+  {
+    "taskId": "rev:market-analysis",
+    "taskName": "Market Analysis",
+    "inputs": {
+      "market": "AI coding assistants"
+    },
+    "status": "completed",
+    "durationMs": 36269,
+    "dataSources": [
+      "hackernews-api",
+      "github-trending",
+      "llm-analysis"
+    ],
+    "timestamp": "2026-04-18T02:45:32.868Z"
+  },
+  {
+    "taskId": "rev:market-analysis",
+    "taskName": "Market Analysis",
+    "inputs": {
+      "market": "AI agents"
+    },
+    "status": "completed",
+    "durationMs": 182300,
+    "dataSources": [
+      "hackernews-api",
+      "github-trending",
+      "llm-analysis"
+    ],
+    "timestamp": "2026-04-18T05:13:05.899Z"
+  },
+  {
+    "taskId": "rev:market-analysis",
+    "taskName": "Market Analysis",
+    "inputs": {
+      "market": "AI agents"
+    },
+    "status": "completed",
+    "durationMs": 126482,
+    "dataSources": [
+      "hackernews-api",
+      "github-trending",
+      "llm-analysis"
+    ],
+    "timestamp": "2026-04-18T05:14:10.158Z"
+  }
+]

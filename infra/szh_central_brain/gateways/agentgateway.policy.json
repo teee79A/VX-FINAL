@@ -1,0 +1,31 @@
+{
+  "authority": "vxstation",
+  "gateway_id": "vxstation-agentgateway",
+  "bind_host": "127.0.0.1",
+  "bind_port": 46080,
+  "loopback_only": true,
+  "public_exposure": "forbidden",
+  "require_bearer_token": true,
+  "require_caller_header": true,
+  "allowed_callers": [
+    "SZH",
+    "OperatorLocal",
+    "vyrdx_terminal_control",
+    "TerminalTunnel",
+    "noisy_admin_terminal",
+    "backup_recovery_terminal"
+  ],
+  "token_file": "/opt/kitty/state/agentgateway/gateway.token",
+  "command_registry": "/opt/kitty/infra/szh_central_brain/gateways/agentgateway.command_registry.json",
+  "max_body_bytes": 16384,
+  "request_timeout_seconds": 30,
+  "rate_limit": {
+    "requests": 120,
+    "window_seconds": 60
+  },
+  "runtime": {
+    "pid_file": "/opt/kitty/state/agentgateway/gateway.pid",
+    "stdout_log": "/opt/kitty/state/agentgateway/gateway.stdout.log",
+    "audit_log": "/opt/kitty/state/agentgateway/audit.jsonl"
+  }
+}

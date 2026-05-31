@@ -1,0 +1,47 @@
+{
+  "name": "@vyrdon/kitty",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "build:api": "tsc",
+    "build:web": "cd web && npm run build",
+    "build:all": "npm run build:api && npm run build:web",
+    "check": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "ci:mandatory": "npm run check && npm run lint && npm run test",
+    "start": "tsx server/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/pdfkit": "^0.17.6",
+    "@types/pg": "^8.20.0",
+    "@types/ws": "^8.18.1",
+    "@typescript-eslint/eslint-plugin": "^8.58.2",
+    "@typescript-eslint/parser": "^8.58.2",
+    "chai": "^6.2.2",
+    "eslint": "^10.2.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.4"
+  },
+  "dependencies": {
+    "@aiondadotcom/mcp-ssh": "^1.3.8",
+    "@fastify/static": "^9.1.1",
+    "@fastify/websocket": "^11.2.0",
+    "f": "^1.4.0",
+    "fastify": "^5.8.5",
+    "fastmcp": "^4.0.0",
+    "pdfkit": "^0.18.0",
+    "pg": "^8.20.0",
+    "tsx": "^4.21.0",
+    "zod": "^4.3.6"
+  },
+  "engines": {
+    "node": "22.x",
+    "npm": ">=10"
+  }
+}

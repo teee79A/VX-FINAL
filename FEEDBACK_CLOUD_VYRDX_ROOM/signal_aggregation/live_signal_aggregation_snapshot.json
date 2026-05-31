@@ -1,0 +1,128 @@
+{
+  "captured_at": "2026-04-19T03:39:10Z",
+  "room": "FEEDBACK_CLOUD_VYRDX_ROOM",
+  "section": "signal_aggregation",
+  "radar": {
+    "lanes_online": 0,
+    "lanes_total": 8,
+    "command_gate": {
+      "accepted": 164,
+      "denied": 147
+    },
+    "ops_registry_status": "green",
+    "overall_status": "red"
+  },
+  "topology": {
+    "routing_mode": "single_gateway_control_path",
+    "mcp_connectors_required": true,
+    "single_gateway_path_required": true,
+    "tunnel_required_for_remote": true,
+    "total_engine_and_server_slots": 50,
+    "legacy_active_stack_lanes": 8,
+    "legacy_reserved_nervous_system_slots": 5,
+    "registered_bridge_nodes": 4,
+    "remaining_bridge_capacity": 46
+  },
+  "bridge_nodes": [
+    {
+      "node_id": "agentgateway-control",
+      "endpoint": "http://127.0.0.1:46080",
+      "status": "online",
+      "trust_level": "private",
+      "connector_id": "agentgateway-control",
+      "transport": "loopback",
+      "topology_role": "gateway_control",
+      "capabilities": [
+        "gateway.dispatch",
+        "gateway.policy",
+        "mcp.transport.local"
+      ],
+      "health_ok": true,
+      "color_state": "green",
+      "service_name": "vxstation-agentgateway",
+      "health": {
+        "ok": true,
+        "service": "vxstation-agentgateway",
+        "status": "running",
+        "gateway_id": "vxstation-agentgateway",
+        "bind": "127.0.0.1:46080",
+        "commands": 26,
+        "time": 1776569950751
+      }
+    },
+    {
+      "node_id": "mcp-linux-admin-local",
+      "endpoint": "http://127.0.0.1:8877",
+      "status": "online",
+      "trust_level": "private",
+      "connector_id": "mcp-linux-admin-local",
+      "transport": "loopback",
+      "topology_role": "power_control",
+      "capabilities": [
+        "linux.admin.power",
+        "linux.admin.status",
+        "linux.admin.logs",
+        "mcp.transport.local"
+      ],
+      "health_ok": true,
+      "color_state": "green",
+      "service_name": "mcp-linux-admin",
+      "health": {
+        "ok": true,
+        "service": "mcp-linux-admin",
+        "time": 1776569950752,
+        "compose_file": "/home/t79/KITTY/docker/compose.yml"
+      }
+    },
+    {
+      "node_id": "mcp-time-calendar-ai-room",
+      "endpoint": "http://127.0.0.1:8792",
+      "status": "online",
+      "trust_level": "private",
+      "connector_id": "mcp-time-calendar-ai-room",
+      "transport": "loopback",
+      "topology_role": "time_calendar_state",
+      "capabilities": [
+        "time.state",
+        "calendar.state",
+        "mcp.transport.local"
+      ],
+      "health_ok": true,
+      "color_state": "green",
+      "service_name": "mcp-time-calendar-agent",
+      "health": {
+        "ok": true,
+        "service": "mcp-time-calendar-agent",
+        "time": 1776569950753,
+        "state_file": "/home/t79/AI_ROOM/state/calendar_state.json",
+        "ai_room_root": "/home/t79/AI_ROOM"
+      }
+    },
+    {
+      "node_id": "mcp-voice-local",
+      "endpoint": "http://127.0.0.1:8790",
+      "status": "online",
+      "trust_level": "private",
+      "connector_id": "mcp-voice-local",
+      "transport": "loopback",
+      "topology_role": "voice_audio_lane",
+      "capabilities": [
+        "voice.synthesis",
+        "audio.transcription",
+        "mcp.transport.local"
+      ],
+      "health_ok": true,
+      "color_state": "green",
+      "service_name": "mcp-voice-agent",
+      "health": {
+        "ok": true,
+        "service": "mcp-voice-agent",
+        "time": 1776569950754,
+        "providers": {
+          "elevenlabs": false,
+          "coqui": false
+        }
+      }
+    }
+  ]
+}

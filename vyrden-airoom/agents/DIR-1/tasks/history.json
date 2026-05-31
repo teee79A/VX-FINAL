@@ -1,0 +1,13 @@
+[
+  {
+    "taskId": "dir:room-status",
+    "taskName": "AI Room Status",
+    "inputs": {},
+    "status": "completed",
+    "durationMs": 28197,
+    "dataSources": [
+      "internal-stats"
+    ],
+    "timestamp": "2026-04-18T02:56:24.333Z"
+  }
+]

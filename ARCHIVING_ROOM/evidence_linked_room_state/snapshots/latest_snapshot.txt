@@ -1,0 +1,4 @@
+captured_at=2026-04-19T04:26:18Z
+integrity_status=PASS
+baseline_file=/home/t79/KITTY/ARCHIVING_ROOM/baselines/current_baseline.sha256
+audit_file=/home/t79/KITTY/evidence/journal/archive_room.audit.jsonl

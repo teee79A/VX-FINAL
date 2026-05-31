@@ -1,0 +1,43 @@
+[
+  {
+    "taskId": "cfo:crypto-treasury",
+    "taskName": "Crypto Treasury Report",
+    "inputs": {
+      "coins": "bitcoin,ethereum,solana"
+    },
+    "status": "completed",
+    "durationMs": 33697,
+    "dataSources": [
+      "coingecko-api"
+    ],
+    "timestamp": "2026-04-18T01:22:42.315Z"
+  },
+  {
+    "taskId": "cfo:crypto-treasury",
+    "taskName": "Crypto Treasury Report",
+    "inputs": {
+      "coins": "bitcoin,ethereum",
+      "currency": "usd"
+    },
+    "status": "completed",
+    "durationMs": 29060,
+    "dataSources": [
+      "coingecko-api"
+    ],
+    "timestamp": "2026-04-18T06:20:14.194Z"
+  },
+  {
+    "taskId": "cfo:crypto-treasury",
+    "taskName": "Crypto Treasury Report",
+    "inputs": {
+      "coins": "bitcoin,ethereum",
+      "currency": "usd"
+    },
+    "status": "completed",
+    "durationMs": 19791,
+    "dataSources": [
+      "coingecko-api"
+    ],
+    "timestamp": "2026-04-18T06:39:20.045Z"
+  }
+]

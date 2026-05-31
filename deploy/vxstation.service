@@ -1,0 +1,25 @@
+[Unit]
+Description=VXSTATION Runtime Server — KITTY Control Plane
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/vxstation/current/app
+EnvironmentFile=-/opt/vxstation/current/app/deploy/.env
+ExecStart=/usr/bin/node dist/server/index.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=vxstation
+
+# Hardening
+ProtectSystem=strict
+ReadWritePaths=/opt/vxstation/shared/evidence/journal /opt/vxstation/shared/logs /opt/vxstation/shared/vyrdon-memory
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,65 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="OPERATION_ROOM" {
+        pane split_direction="Horizontal" {
+            pane size="42%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_room_overview.sh"
+            pane split_direction="Vertical" {
+                pane size="52%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_runtime_status.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_operator_actions.sh"
+            }
+        }
+    }
+
+    tab name="OPERATION_LIVE_CONTROL" {
+        pane split_direction="Horizontal" {
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_live_surface.sh"
+            pane split_direction="Vertical" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_market_board.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_power_room.sh"
+            }
+        }
+    }
+
+    tab name="OPERATION_MEDIA_PLASMA" {
+        pane split_direction="Vertical" {
+            pane size="58%" split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_media_video.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_media_audio.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_voice_lane.sh"
+            }
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_time_date.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_btop.sh"
+            }
+        }
+    }
+
+    tab name="OPERATION_MONITOR" {
+        pane split_direction="Vertical" {
+            pane size="46%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_execution_monitoring.sh"
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_event_bus.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_filesystem_panel.sh"
+            }
+        }
+    }
+
+    tab name="OPERATION_EVIDENCE" {
+        pane split_direction="Vertical" {
+            pane size="62%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_evidence_state.sh"
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_control_plane.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_szh_mcp_stream.sh"
+            }
+        }
+    }
+}

@@ -1,0 +1,206 @@
+{
+  "commands": [
+    {
+      "id": "stack.status",
+      "argv": [
+        "/opt/kitty/bin/kitty-status.sh"
+      ],
+      "timeout_seconds": 40
+    },
+    {
+      "id": "stack.up",
+      "argv": [
+        "/opt/kitty/bin/kitty-up.sh"
+      ],
+      "timeout_seconds": 60
+    },
+    {
+      "id": "stack.down",
+      "argv": [
+        "/opt/kitty/bin/kitty-down.sh"
+      ],
+      "timeout_seconds": 60
+    },
+    {
+      "id": "stack.tv",
+      "argv": [
+        "/opt/kitty/bin/kitty-tv-wall.sh"
+      ],
+      "timeout_seconds": 45
+    },
+    {
+      "id": "stack.tv.reset",
+      "argv": [
+        "/opt/kitty/bin/kitty-tv-wall.sh",
+        "--reset"
+      ],
+      "timeout_seconds": 45
+    },
+    {
+      "id": "mcp.linux.status",
+      "argv": [
+        "/opt/kitty/bin/mcp-linux-admin-status.sh"
+      ],
+      "timeout_seconds": 20
+    },
+    {
+      "id": "mcp.linux.up",
+      "argv": [
+        "/opt/kitty/bin/mcp-linux-admin-up.sh"
+      ],
+      "timeout_seconds": 30
+    },
+    {
+      "id": "mcp.linux.down",
+      "argv": [
+        "/opt/kitty/bin/mcp-linux-admin-down.sh"
+      ],
+      "timeout_seconds": 30
+    },
+    {
+      "id": "mcp.time.status",
+      "argv": [
+        "/opt/kitty/bin/mcp-time-calendar-status.sh"
+      ],
+      "timeout_seconds": 20
+    },
+    {
+      "id": "mcp.time.up",
+      "argv": [
+        "/opt/kitty/bin/mcp-time-calendar-up.sh"
+      ],
+      "timeout_seconds": 30
+    },
+    {
+      "id": "mcp.time.down",
+      "argv": [
+        "/opt/kitty/bin/mcp-time-calendar-down.sh"
+      ],
+      "timeout_seconds": 30
+    },
+    {
+      "id": "mcp.voice.status",
+      "argv": [
+        "/opt/kitty/bin/mcp-voice-agent-status.sh"
+      ],
+      "timeout_seconds": 20
+    },
+    {
+      "id": "mcp.voice.up",
+      "argv": [
+        "/opt/kitty/bin/mcp-voice-agent-up.sh"
+      ],
+      "timeout_seconds": 30
+    },
+    {
+      "id": "mcp.voice.down",
+      "argv": [
+        "/opt/kitty/bin/mcp-voice-agent-down.sh"
+      ],
+      "timeout_seconds": 30
+    },
+    {
+      "id": "engine.netdata.health",
+      "argv": [
+        "/usr/bin/curl",
+        "-fsS",
+        "http://127.0.0.1:19999/api/v1/info"
+      ],
+      "timeout_seconds": 10
+    },
+    {
+      "id": "engine.clickhouse.ping",
+      "argv": [
+        "/usr/bin/curl",
+        "-fsS",
+        "http://127.0.0.1:8123/ping"
+      ],
+      "timeout_seconds": 10
+    },
+    {
+      "id": "engine.tenderly.version",
+      "argv": [
+        "/home/t79/.local/bin/tenderly",
+        "--version"
+      ],
+      "timeout_seconds": 10
+    },
+    {
+      "id": "engine.radar.help",
+      "argv": [
+        "/opt/kitty/bin/vxstation-python-run.sh",
+        "/opt/kitty/bin/vxstation_radar.py",
+        "--help"
+      ],
+      "timeout_seconds": 10
+    },
+    {
+      "id": "engine.octosql.help",
+      "argv": [
+        "/home/t79/.local/bin/octosql",
+        "--help"
+      ],
+      "timeout_seconds": 10
+    },
+    {
+      "id": "engine.steampipe.version",
+      "argv": [
+        "/home/t79/.local/bin/steampipe",
+        "--version"
+      ],
+      "timeout_seconds": 10
+    },
+    {
+      "id": "room.operation.open",
+      "argv": [
+        "/opt/kitty/bin/kitty-operation-room.sh",
+        "--reset"
+      ],
+      "timeout_seconds": 30
+    },
+    {
+      "id": "room.commercial.open",
+      "argv": [
+        "/opt/kitty/bin/kitty-commercial-room.sh",
+        "--reset"
+      ],
+      "timeout_seconds": 30
+    },
+    {
+      "id": "room.archive.open",
+      "argv": [
+        "/opt/kitty/bin/kitty-archive-room.sh",
+        "--reset"
+      ],
+      "timeout_seconds": 30
+    },
+    {
+      "id": "room.feedback.open",
+      "argv": [
+        "/opt/kitty/bin/kitty-feedback-cloud-room.sh",
+        "--reset"
+      ],
+      "timeout_seconds": 30
+    },
+    {
+      "id": "room.central_brain.open",
+      "argv": [
+        "/opt/kitty/bin/kitty-central-brain.sh",
+        "--reset"
+      ],
+      "timeout_seconds": 30
+    },
+    {
+      "id": "room.radar.open",
+      "argv": [
+        "/opt/kitty/bin/vxstation-python-run.sh",
+        "/opt/kitty/bin/vxstation_surface_launch.py",
+        "radar"
+      ],
+      "params": {
+        "layer": { "required": false, "max_length": 64 }
+      },
+      "timeout_seconds": 30
+    }
+  ]
+}

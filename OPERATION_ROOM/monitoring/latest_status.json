@@ -1,0 +1,18 @@
+{
+  "overall_status": "green",
+  "missing_count": 0,
+  "summary": {
+    "scope": "kitty_internal_operation_room",
+    "note": "internal room status for VXSTATION-inside-kitty architecture"
+  },
+  "updated_at": "2026-04-19T03:39:30Z",
+  "services": {
+    "agentgateway": "up",
+    "netdata": "up",
+    "clickhouse": "up",
+    "airflow": "up",
+    "mcp_voice": "up",
+    "mcp_time_cal": "up",
+    "n8n": "down"
+  }
+}

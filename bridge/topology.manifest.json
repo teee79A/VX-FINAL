@@ -1,0 +1,13 @@
+{
+  "routing_mode": "single_gateway_control_path",
+  "transport_policy": {
+    "mcp_connectors_required": true,
+    "single_gateway_path_required": true,
+    "tunnel_required_for_remote": true
+  },
+  "capacity_policy": {
+    "total_engine_and_server_slots": 50,
+    "legacy_active_stack_lanes": 8,
+    "legacy_reserved_nervous_system_slots": 5
+  }
+}

@@ -1,0 +1,70 @@
+node_modules/
+dist/
+state/
+logs/
+*.log
+.env
+.env.local
+.env.production
+.claude/
+.build/
+web/.next/
+.worktrees/
+
+# Local/runtime noise
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.tsbuildinfo
+tmp/
+.DS_Store
+
+# Local editor/system
+.vscode/
+.vyrdon-memory/
+
+# Generated/local runtime evidence
+data/cloud-monitor.ndjson
+vyrden-airoom/evidence/
+vyrden-airoom/agents/*/evidence/
+
+# Local Python environments
+.venv/
+venv/
+.env/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# TypeScript / build cache
+*.tsbuildinfo
+dist/
+build/
+tmp/
+
+# Local editor state
+.vscode/
+.vyrdon-memory/
+
+# Runtime/generated evidence
+data/cloud-monitor.ndjson
+vyrden-airoom/evidence/
+vyrden-airoom/agents/*/evidence/
+
+# VYRDX is separate; do not include old VYRDX app/site/runtime in VX-FINAL
+packages/vyrdx-app/
+server/vyrdx/
+vyrdx/
+vyrdx-bridge/
+vyrdx-static/
+VYRDX_*.md
+
+# Large media should not live in source repo
+*.mp4
+*.mov
+*.avi
+*.webm

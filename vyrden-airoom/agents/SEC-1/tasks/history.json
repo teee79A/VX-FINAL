@@ -1,0 +1,74 @@
+[
+  {
+    "taskId": "sec:domain-scan",
+    "taskName": "Domain Security Scan",
+    "inputs": {
+      "domain": "vyrden.com"
+    },
+    "status": "completed",
+    "durationMs": 8563,
+    "dataSources": [
+      "dns-lookup",
+      "ssl-check",
+      "headers-check"
+    ],
+    "timestamp": "2026-04-18T01:23:09.795Z"
+  },
+  {
+    "taskId": "sec:domain-scan",
+    "taskName": "Domain Security Scan",
+    "inputs": {
+      "domain": "vyrden.com"
+    },
+    "status": "completed",
+    "durationMs": 31703,
+    "dataSources": [
+      "dns-lookup",
+      "ssl-check",
+      "headers-check"
+    ],
+    "timestamp": "2026-04-18T01:23:37.713Z"
+  },
+  {
+    "taskId": "sec:domain-scan",
+    "taskName": "Domain Security Scan",
+    "inputs": {
+      "domain": "vyrden.com"
+    },
+    "status": "completed",
+    "durationMs": 42175,
+    "dataSources": [
+      "dns-lookup",
+      "ssl-check",
+      "headers-check"
+    ],
+    "timestamp": "2026-04-18T01:23:58.197Z"
+  },
+  {
+    "taskId": "sec:domain-scan",
+    "taskName": "Domain Security Scan",
+    "inputs": {
+      "domain": "vyrden.com"
+    },
+    "status": "completed",
+    "durationMs": 37809,
+    "dataSources": [
+      "dns-lookup",
+      "ssl-check",
+      "headers-check"
+    ],
+    "timestamp": "2026-04-18T01:24:11.547Z"
+  },
+  {
+    "taskId": "sec:dependency-audit",
+    "taskName": "Dependency Vulnerability Audit",
+    "inputs": {},
+    "status": "completed",
+    "durationMs": 20944,
+    "dataSources": [
+      "npm-audit",
+      "osv-api"
+    ],
+    "timestamp": "2026-04-18T02:54:27.169Z"
+  }
+]

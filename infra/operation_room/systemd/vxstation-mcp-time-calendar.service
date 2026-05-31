@@ -1,0 +1,18 @@
+[Unit]
+Description=VXSTATION MCP Time Calendar
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/kitty
+Environment=PYTHONUNBUFFERED=1
+Environment=KITTY_MCP_TIME_CAL_HOST=127.0.0.1
+Environment=KITTY_MCP_TIME_CAL_PORT=8792
+ExecStart=/usr/bin/python3 /opt/kitty/bin/mcp-time-calendar-agent.py
+Restart=always
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

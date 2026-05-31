@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo '[pre-push] Running VXSTATION MCP self-test...'
+test -x "${VXSTATION_SELFTEST:-/opt/kitty/bin/vxstation-mcp-selftest.sh}" || { echo "[pre-push] self-test missing; skipping"; exit 0; }
+"${VXSTATION_SELFTEST:-/opt/kitty/bin/vxstation-mcp-selftest.sh}"
+
+echo '[pre-push] PASS: VXSTATION MCP path healthy.'

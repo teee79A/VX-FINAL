@@ -1,0 +1,14 @@
+{
+  "gateway_id": "vxstation-agentgateway",
+  "observed_state": "active",
+  "route_target": "vxstation.bridge.dispatch",
+  "security_mode": "loopback_only_bearer_token_caller_allowlist",
+  "runtime": {
+    "bind_host": "127.0.0.1",
+    "bind_port": 46080,
+    "loopback_only": true,
+    "public_exposure": "forbidden",
+    "bearer_token_required": true,
+    "caller_header_required": true
+  }
+}

@@ -1,0 +1,21 @@
+name: My Config
+version: 0.0.1
+schema: v1
+
+models:
+  - name: My Voyage Reranker
+    provider: voyage
+    apiKey: <YOUR_VOYAGE_API_KEY>
+    model: rerank-2
+    roles:
+      - rerank
+parameters:
+      - name: learning_rate
+        type: float
+        default: 0.01
+      - name: num_epochs
+        type: int
+        default: 10
+      - name: batch_size
+        type: int
+        default: 32

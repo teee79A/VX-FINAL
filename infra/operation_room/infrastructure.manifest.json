@@ -1,0 +1,7 @@
+{
+  "desired_state": "active",
+  "observed_state": "active",
+  "route_target": "vxstation.bridge.dispatch",
+  "storage_adapters_declared_total": 6,
+  "power_management_declared_total": 6
+}

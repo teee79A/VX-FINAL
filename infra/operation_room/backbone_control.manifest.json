@@ -1,0 +1,7 @@
+{
+  "desired_state": "active",
+  "observed_state": "active",
+  "route_target": "vxstation.bridge.dispatch",
+  "server_total": 523,
+  "physical_backbone_declared_total": 5
+}

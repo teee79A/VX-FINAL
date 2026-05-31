@@ -1,0 +1,8 @@
+engine_id	role	binary_or_home	state	primary_use
+sha256_integrity	hash verification	/usr/bin/sha256sum	active	archive integrity checks
+gpg_signing	signed evidence logs	/usr/bin/gpg	active	sign/verify archive snapshots
+tar_packaging	cold archive packing	/usr/bin/tar	active	export immutable bundles
+gzip_compression	archive compression	/usr/bin/gzip	active	compress archive payloads
+zstd_compression	high-speed compression	/usr/bin/zstd	active	fast archive compression
+rsync_sync	archive replication	/usr/bin/rsync	active	copy/sync archive snapshots
+timg_visual_preview	visual evidence preview	/usr/bin/timg	active	image artifact viewing

@@ -1,0 +1,17 @@
+node_modules
+.git
+dist
+logs
+*.bak
+# vyrden-airoom included — required by ENGINES/ceo
+evidence/journal/*.jsonl
+evidence/journal/command_backbone
+evidence/journal/command_bus.hash.head
+deploy/.env
+.reports
+*.md
+!README.md
+pnpm-lock.yaml
+vscode
+vscode-docs
+ctx7sk-*

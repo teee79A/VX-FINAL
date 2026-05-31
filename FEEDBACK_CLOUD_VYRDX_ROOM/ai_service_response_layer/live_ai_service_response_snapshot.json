@@ -1,0 +1,52 @@
+{
+  "captured_at": "2026-04-19T03:39:10Z",
+  "room": "FEEDBACK_CLOUD_VYRDX_ROOM",
+  "section": "ai_service_response_layer",
+  "agentgateway_health": {
+    "ok": true,
+    "service": "vxstation-agentgateway",
+    "status": "running",
+    "gateway_id": "vxstation-agentgateway",
+    "bind": "127.0.0.1:46080",
+    "commands": 26,
+    "time": 1776569951200
+  },
+  "time_calendar_health": {
+    "ok": true,
+    "service": "mcp-time-calendar-agent",
+    "time": 1776569951201,
+    "state_file": "/home/t79/AI_ROOM/state/calendar_state.json",
+    "ai_room_root": "/home/t79/AI_ROOM"
+  },
+  "voice_health": {
+    "ok": true,
+    "service": "mcp-voice-agent",
+    "time": 1776569951202,
+    "providers": {
+      "elevenlabs": false,
+      "coqui": false
+    }
+  },
+  "module_actions_tail": [
+    "{\"timestamp\":\"2026-04-18T22:00:20.813Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-18T23:05:21.117Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-18T23:05:21.322Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-18T23:05:21.475Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-18T23:32:09.960Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-18T23:32:09.985Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-18T23:32:10.009Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T00:40:30.706Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T00:40:31.166Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T00:40:31.189Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T00:50:09.314Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T00:50:09.820Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T00:50:10.014Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T01:12:35.071Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T01:12:35.272Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T01:12:35.498Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T03:01:05.540Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T03:01:05.596Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T03:01:05.729Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}",
+    "{\"timestamp\":\"2026-04-19T03:01:06.591Z\",\"requestId\":\"r2\",\"module\":\"calendar\",\"action\":\"list\",\"actorId\":\"a2\",\"actorRole\":\"operator\",\"evidenceRef\":\"kitty.module.calendar.r2\",\"commandBus\":null}"
+  ]
+}

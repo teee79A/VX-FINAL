@@ -1,0 +1,31 @@
+# Cloudflare Tunnel config for standalone vyrden.com AI room.
+# Place at: /etc/cloudflared/vyrden-airoom.yml
+# Run with: cloudflared tunnel --config /etc/cloudflared/vyrden-airoom.yml run
+
+tunnel: vyrden-airoom
+credentials-file: /etc/cloudflared/vyrden-airoom-creds.json
+
+ingress:
+  - hostname: vyrden.com
+    path: /ws
+    service: ws://127.0.0.1:3100
+
+  - hostname: vyrden.com
+    service: http://127.0.0.1:3100
+
+  - hostname: api.vyrden.com
+    path: /ws
+    service: ws://127.0.0.1:3100
+
+  - hostname: api.vyrden.com
+    service: http://127.0.0.1:3100
+
+  # Compatibility host used by existing vyrden.com frontend builds.
+  - hostname: vyrden-api.vyrdon.com
+    path: /ws
+    service: ws://127.0.0.1:3100
+
+  - hostname: vyrden-api.vyrdon.com
+    service: http://127.0.0.1:3100
+
+  - service: http_status:404

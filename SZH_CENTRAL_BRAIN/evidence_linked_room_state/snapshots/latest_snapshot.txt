@@ -1,0 +1,8 @@
+captured_at=2026-04-19T03:36:43Z
+route_target=vxstation.bridge.dispatch
+authority=vxstation-agentgateway
+gateway_manifest=/home/t79/KITTY/infra/szh_central_brain/gateway_control.manifest.json
+command_registry=/home/t79/KITTY/infra/szh_central_brain/gateways/agentgateway.command_registry.json
+command_audit=/home/t79/KITTY/evidence/journal/command_bus.audit.jsonl
+module_journal=/home/t79/KITTY/evidence/journal/module_actions.jsonl
+room_audit=/home/t79/KITTY/evidence/journal/szh_central_brain.audit.jsonl

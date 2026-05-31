@@ -1,0 +1,27 @@
+[Unit]
+Description=VXSTATION Web — Next.js standalone room frontend
+After=network-online.target vxstation-api.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/vxstation/current/web/.next/standalone
+EnvironmentFile=/opt/vxstation/shared/deploy/.env
+Environment=PORT=3000
+Environment=HOSTNAME=127.0.0.1
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=vxstation-web
+
+# Hardening
+ProtectSystem=strict
+ReadWritePaths=/opt/vxstation/shared/logs
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

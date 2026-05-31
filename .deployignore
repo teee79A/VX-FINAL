@@ -1,0 +1,63 @@
+# .deployignore — files excluded from production deployment
+# Used by deploy.sh rsync --exclude-from
+
+# Dev tooling
+.devcontainer/
+.vscode/
+.continue/
+.claude/
+.github/
+
+# Git
+.git/
+.gitignore
+
+# Tests (not needed in production)
+tests/
+
+# Documentation (not needed in production)
+*.md
+docs/
+
+# Logs and local state
+logs/
+*.log
+*.local
+.env.local
+
+# Evidence journal (production generates its own)
+evidence/journal/*.jsonl
+evidence/journal/command_backbone
+evidence/journal/command_bus.hash.head
+
+# Build artifacts are deployed separately
+dist/
+
+# Package manager lock (npm ci uses package-lock.json — keep that)
+pnpm-lock.yaml
+
+# Dev-only / spec files
+ProgrammingProject2425/
+VYRDX_BUILD_SPEC.md
+DEPLOY_REVIEW.md
+RUNTIME_RECOVERY_REVIEW.md
+SHIP_REPORT.md
+VYRDX_INSTALLED_RUNTIME_AUDIT.md
+VYRDX_ROOM_SYSTEM_REVIEW.md
+VYRDX_RUNTIME_MAP.md
+HANDOFF.md
+
+# Images
+*.png
+
+# Node modules (installed on target)
+node_modules/
+
+# Deploy env (remote has its own)
+deploy/.env
+
+# Editor / IDE
+*.swp
+*.swo
+*~
+.DS_Store

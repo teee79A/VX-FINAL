@@ -1,0 +1,55 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="FEEDBACK_CLOUD_VYRDX_ROOM" {
+        pane split_direction="Horizontal" {
+            pane size="42%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_room_overview.sh"
+            pane split_direction="Vertical" {
+                pane size="52%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_runtime_status.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_operator_actions.sh"
+            }
+        }
+    }
+
+    tab name="FEEDBACK_PIPELINE" {
+        pane split_direction="Vertical" {
+            pane size="34%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_cloud_feedback_intake.sh"
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_feedback_processing.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_signal_aggregation.sh"
+            }
+        }
+    }
+
+    tab name="FEEDBACK_RESPONSE" {
+        pane split_direction="Vertical" {
+            pane size="58%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_response_layer.sh"
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_outputs.sh"
+        }
+    }
+
+    tab name="FEEDBACK_MONITOR" {
+        pane split_direction="Vertical" {
+            pane size="56%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_execution_monitoring.sh"
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_evidence_state.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_runtime_status.sh"
+            }
+        }
+    }
+
+    tab name="FEEDBACK_LIVE_CONTROL" {
+        pane split_direction="Horizontal" {
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_live_control_surface.sh"
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_evidence_state.sh"
+        }
+    }
+}

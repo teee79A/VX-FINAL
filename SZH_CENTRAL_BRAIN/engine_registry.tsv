@@ -1,0 +1,29 @@
+engine_id	role	binary_or_home	state	primary_use
+ceo_dispatch	central command dispatcher	http://127.0.0.1:46080	active	single control path to all rooms
+policy_router	policy routing layer	/home/t79/KITTY/SZH_CENTRAL_BRAIN/policy_routing	active	room policy routing
+state_synthesizer	state synthesis layer	/home/t79/KITTY/SZH_CENTRAL_BRAIN/state_synthesis	active	cross-room state unification
+cross_room_coordinator	room coordination layer	/home/t79/KITTY/SZH_CENTRAL_BRAIN/cross_room_coordination	active	operation/commercial/archive/cloud coordination
+decision_support	decision support layer	/home/t79/KITTY/SZH_CENTRAL_BRAIN/decision_support	active	operator decision backing
+mcp_governor	mcp nervous system governor	/home/t79/KITTY/infra/szh_central_brain/mcp_connector_bindings.json	active	mcp connector governance
+rag_memory	retrieval memory core	/home/t79/KITTY/data/szh_central_brain/engine_catalog.json	active	evidence-backed retrieval
+claude_code_logic_brain	claude code reasoning core	/home/t79/KITTY/SZH_CENTRAL_BRAIN/orchestration_logic	active	logic planning and command reasoning for orchestrated execution
+master_brain_orchestrator	master orchestration engine	/home/t79/KITTY/SZH_CENTRAL_BRAIN/orchestration_logic	active	top-level orchestration across rooms and distributed runtimes
+temporal_fault_tolerance_engine	fault-tolerant workflow engine	/home/t79/.local/bin/temporal	active	never lose a task and durable workflow execution
+n8n_visual_workflow_engine	visual workflow and SaaS automation engine	/home/t79/.local/bin/n8n	standby	visual workflow automation across commercial tools
+crewai_agent_team_manager	agent team orchestration engine	python://crewai	standby	multi-agent team management and delegation
+apache_airflow_pipeline_manager	data pipeline orchestration engine	/home/t79/.local/bin/airflow	standby	pipeline scheduling and data workflow management
+servicenow_automation_engine	enterprise operations automation engine	https://www.servicenow.com	active	enterprise operations automation and ITSM workflowing
+ray_compute_engine	high-speed distributed CPU compute engine	/home/t79/.local/bin/ray	standby	parallel compute for multi-agent execution
+dapr_runtime_engine	distributed communication runtime engine	/home/t79/.local/bin/dapr	standby	inter-agent communication, pub/sub, and service invocation
+claude_code_ops_engine	agentic CLI operations engine	/home/t79/.local/bin/claude	standby	agentic terminal operations and orchestration
+ollama_local_processing_engine	local private AI processing engine	/usr/local/bin/ollama	active	private local model inference and processing
+fabric_workflow_engine	AI workflow framework engine	/home/t79/.local/bin/fab	standby	workflow framework for scripted automation
+time_calendar_core	time-date engine	http://127.0.0.1:8792	active	time and calendar control lane
+voice_audio_core	voice-audio engine	http://127.0.0.1:8790	active	voice and audio command lane
+audio_plasma_visualizer	terminal plasma audio visualizer	/usr/bin/cava	missing	audio density visualization for feed verification
+audio_hifi_player	high-fidelity terminal audio player	/usr/bin/mpv	missing	play FLAC/WAV/MP3 room feeds without GUI
+audio_monitor_fallback	terminal audio monitor/player	/usr/bin/ffplay	active	no-root fallback audio playback and monitoring
+audio_processing_muscle	audio processing and transform engine	/usr/bin/ffmpeg	active	filtering, cleanup, clone/archive pipelines
+plasma_hd_clock	plasma hd terminal clock	/usr/bin/tty-clock	missing	sharp live terminal clock display
+sharp_calendar_engine	sharp terminal calendar engine	/home/t79/KITTY/.venv/bin/calcure	active	interactive calendar planning and schedule control
+cloud_target_orchestrator	cloud dispatch engine	/home/t79/KITTY/data/vxstation_control/cloud_target_manager.json	active	cloud target routing

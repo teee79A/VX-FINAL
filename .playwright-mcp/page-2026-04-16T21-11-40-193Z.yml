@@ -1,0 +1,60 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: V
+      - generic [ref=e5]: VYRDON AI Room vyrden.com
+    - generic [ref=e6]:
+      - generic [ref=e9]: "Inference: LIVE"
+      - generic [ref=e11]: 98 Engines
+      - generic [ref=e13]: 7/7 Agents
+  - navigation [ref=e14]:
+    - button "Chat" [ref=e15] [cursor=pointer]
+    - button "Language" [active] [ref=e16] [cursor=pointer]
+    - button "Calendar" [ref=e17] [cursor=pointer]
+    - button "Models" [ref=e18] [cursor=pointer]
+    - button "Dashboard" [ref=e19] [cursor=pointer]
+  - main [ref=e20]:
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - heading "Translate" [level=3] [ref=e48]
+        - textbox "Enter text to translate..." [ref=e49]
+        - generic [ref=e50]:
+          - combobox [ref=e51]:
+            - option "Auto-detect" [selected]
+            - option "English"
+            - option "Spanish"
+            - option "French"
+            - option "German"
+            - option "Chinese"
+            - option "Japanese"
+            - option "Arabic"
+          - combobox [ref=e52]:
+            - option "English" [selected]
+            - option "Spanish"
+            - option "French"
+            - option "German"
+            - option "Chinese"
+            - option "Japanese"
+            - option "Arabic"
+          - button "Translate" [ref=e53] [cursor=pointer]
+        - generic [ref=e54]: Translation will appear here...
+      - generic [ref=e55]:
+        - heading "Summarize" [level=3] [ref=e56]
+        - textbox "Enter text to summarize..." [ref=e57]
+        - generic [ref=e58]:
+          - combobox [ref=e59]:
+            - option "Paragraph" [selected]
+            - option "Bullet Points"
+            - option "Headline"
+          - button "Summarize" [ref=e60] [cursor=pointer]
+        - generic [ref=e61]: Summary will appear here...
+      - generic [ref=e62]:
+        - heading "Sentiment Analysis" [level=3] [ref=e63]
+        - textbox "Enter text to analyze sentiment..." [ref=e64]
+        - button "Analyze" [ref=e65] [cursor=pointer]
+        - generic [ref=e66]: Sentiment analysis will appear here...
+      - generic [ref=e67]:
+        - heading "Entity Extraction" [level=3] [ref=e68]
+        - textbox "Enter text to extract entities..." [ref=e69]
+        - button "Extract" [ref=e70] [cursor=pointer]
+        - generic [ref=e71]: Extracted entities will appear here...

@@ -1,0 +1,16 @@
+engine_id	role	binary_or_home	state	primary_use
+agentgateway_control	operations command gateway	http://127.0.0.1:46080	active	control dispatch and module routing
+n8n_workflow	workflow automation	/home/t79/.local/bin/n8n	standby	operations workflow triggers
+temporal_dispatcher	distributed execution	/home/t79/.local/bin/temporal	active	long-running operation flow
+dapr_distributed_runtime	distributed service runtime	/home/t79/.local/bin/dapr	standby	service-to-service orchestration and pub/sub runtime plane
+ray_temporal_compute	parallel compute and workflow fabric	/home/t79/.local/bin/ray	standby	scalable compute scheduling and workflow execution with temporal patterns
+airflow_scheduler	scheduled execution	/home/t79/.local/bin/airflow	standby	batch operation scheduling
+octosql_query	data federation query engine	/home/t79/.local/bin/octosql	active	multi-source operation queries
+steampipe_query	plugin-based data query	/home/t79/.local/bin/steampipe	active	infrastructure and cloud queries
+radar_signal	live signal radar	/home/t79/KITTY/bin/vxstation_radar.py	active	realtime signal monitoring
+tenderly_chain_watch	blockchain runtime alerts	/home/t79/.local/bin/tenderly	active	chain transaction monitoring
+calcure_calendar	terminal calendar ops	/home/t79/KITTY/.venv/bin/calcure	active	operations scheduling
+btop_runtime	system runtime monitor	/home/t79/.local/bin/zenith	active	cpu/memory/network live monitoring
+mcp_cli	local tool bridge	/home/t79/KITTY/.venv/bin/mcp	active	local MCP tool execution
+ops_brain_sop_orchestrator	outcome SOP orchestration	/home/t79/KITTY/bin/ops-brain.sh	active	living SOP system organized by business outcomes
+zsh_automation_hub	terminal automation hub	/home/t79/KITTY/bin/zsh-automation-hub.sh	active	single-command commercial tasks and cross-ops handoffs

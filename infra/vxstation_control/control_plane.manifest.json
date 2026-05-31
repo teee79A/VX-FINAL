@@ -1,0 +1,6 @@
+{
+  "desired_state": "active",
+  "observed_state": "active",
+  "route_target": "vxstation.bridge.dispatch",
+  "authority": "vxstation-agentgateway"
+}

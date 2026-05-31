@@ -1,0 +1,11 @@
+connector_id	type	source	target	state	room_binding
+filesystem_localhost	filesystem	MCP/local shell	VXSTATION folders	active	COMMERCIAL_ROOM
+mcp_local_loopback	protocol	127.0.0.1 tool endpoints	local engines	active	COMMERCIAL_ROOM
+n8n_webhook_ingress	webhook	external events	n8n workflows	active	COMMERCIAL_ROOM
+temporal_task_queue	orchestration	commercial actions	temporal workers	active	COMMERCIAL_ROOM
+airflow_dag_bridge	scheduler	batch jobs	airflow dags	active	COMMERCIAL_ROOM
+kafka_topic_fabric	event_bus	room producers	room consumers	active	COMMERCIAL_ROOM
+qdrant_vector_link	evidence_index	events and receipts	RAG/vector retrieval	active	COMMERCIAL_ROOM
+boundary_session_gate	security	operator command path	privileged targets	active	COMMERCIAL_ROOM
+consul_service_map	discovery	service registration	router and clients	active	COMMERCIAL_ROOM
+kitty_zellij_panel_surface	ui	kitty terminal	zellij room tabs	active	COMMERCIAL_ROOM

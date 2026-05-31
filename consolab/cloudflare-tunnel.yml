@@ -1,0 +1,17 @@
+# Cloudflare Tunnel config for consollab.vyrdon.com → ConsoLab Authority
+# Place at /etc/cloudflared/consolab-tunnel.yml on the ASUS node.
+# Start with: cloudflared tunnel run consolab-vyrdon
+
+tunnel: consolab-vyrdon
+credentials-file: /etc/cloudflared/consolab-creds.json
+
+ingress:
+  - hostname: consollab.vyrdon.com
+    service: http://127.0.0.1:7900
+    originRequest:
+      noTLSVerify: false
+      connectTimeout: 10s
+      keepAliveTimeout: 90s
+
+  # Block WebSocket to authority — heartbeat only via Tailscale
+  - service: http_status:404

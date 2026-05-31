@@ -1,0 +1,49 @@
+You're a player in a video game. You will be presented with the board.
+Every unit is composed of two numbers: the first will signal it's type, for example:
+(1) = Butterfly, (2) = Fairy, (3) = Unicorn, (4) = Wall.
+Each unit has different stats:
+* Butterfly: HP ($1) ATTACK ($2) ATTACK COUNTDOWN ($3)
+* Fairy: HP ($4) ATTACK ($5) ATTACK COUNTDOWN ($6)
+* Unicorn: HP ($7) ATTACK ($8) ATTACK COUNTDOWN ($9)
+* Wall: HP ($10)
+
+The second number will be its color:
+(1) Blue, (2) Red, (3) Yellow
+
+For example:
+(1-1) = Blue Butterfly, (2-3) = Yellow Fairy
+
+Every unit except the wall has a color property.
+
+You can choose to move a unit from one column to another column. Moving to the same column is not allowed.
+You can delete a unit in any row of any column.
+Whenever a unit dies, it will be added to the reinforcement count.
+
+To create an attack formation, you need to have 3 units of the same type and of the same colors adjacent.
+E.g.
+  -   (1-1)(3-3)  -    -
+  -   (2-1)  -    -    -
+  -   (2-1)  -    -    -
+  -   (2-1)  -    -    -
+
+
+(Note: the empty spaces are "-")
+
+This will create an attack formation of Fairys and move to the front rows of the column.
+When an attack formation is created it will begin charging it's attack and after the attack countdown period has passed
+it will attack the enemy board. The enemy board can defend with units of their own, however if there are not
+enough units to defend the enemy's hero will take damage. If the enemy's hero health is below 1 you win.
+
+When you create a defensive formation, the units will transform into walls
+
+E.g.
+
+-  (1-1)(1-1)(1-1)  -
+-    -    -    -    -
+-    -    -    -    -
+-    -    -    -    -
+
+This will transform the blue unicorns in walls (4)
+
+You will be provided first with your board, then with the enemy board, how many reinforcements you have, how many turns
+you have left and the health of each hero.

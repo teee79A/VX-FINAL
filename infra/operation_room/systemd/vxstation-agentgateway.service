@@ -1,0 +1,16 @@
+[Unit]
+Description=VXSTATION AgentGateway
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/kitty
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 /opt/kitty/bin/agentgateway.py --policy /opt/kitty/infra/szh_central_brain/gateways/agentgateway.policy.json
+Restart=always
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

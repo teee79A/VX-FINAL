@@ -1,0 +1,77 @@
+services:
+  vxstation:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: vxstation
+    restart: unless-stopped
+    ports:
+      - "${VXSTATION_PORT:-7800}:7800"
+    environment:
+      - KITTY_ROOT=/app
+      - VYRDX_ROOT=${VYRDX_ROOT:-/opt/vyrdx}
+      - VXSTATION_PORT=7800
+      - VXSTATION_HOST=0.0.0.0
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://vyrdon:${POSTGRES_PASSWORD}@postgres:5432/vyrdon
+      - POSTGRES_URL=postgresql://vyrdon:${POSTGRES_PASSWORD}@postgres:5432/vyrdon
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - vxnet
+    volumes:
+      - evidence-journal:/app/evidence/journal
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:7800/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: vxstation-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: vyrdon
+      POSTGRES_USER: vyrdon
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - vxnet
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vyrdon"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: vxstation-redis
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redisdata:/data
+    networks:
+      - vxnet
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  pgdata:
+  redisdata:
+  evidence-journal:
+
+networks:
+  vxnet:
+    driver: bridge

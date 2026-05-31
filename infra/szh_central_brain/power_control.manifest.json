@@ -1,0 +1,22 @@
+{
+  "observed_state": "active",
+  "desired_state": "active",
+  "gateway_id": "vxstation-agentgateway",
+  "route_target": "vxstation.bridge.dispatch",
+  "primary_power_surface": "mcp-linux-admin",
+  "server_total": 523,
+  "management_oob_network": "127.0.0.1/loopback",
+  "required_connector_id": "mcp-linux-admin-local",
+  "required_remote_power_surfaces": [
+    "ops.service.start",
+    "ops.service.stop",
+    "ops.service.restart",
+    "ops.service.status"
+  ],
+  "required_scheduled_maintenance_surfaces": [
+    "calendar.state.upsert",
+    "calendar.state.get"
+  ],
+  "operation_room_manifest": "/opt/kitty/infra/operation_room/infrastructure.manifest.json",
+  "backbone_manifest": "/opt/kitty/infra/operation_room/backbone_control.manifest.json"
+}

@@ -1,0 +1,18 @@
+[Unit]
+Description=VXSTATION MCP Voice Agent
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/kitty
+Environment=PYTHONUNBUFFERED=1
+Environment=KITTY_MCP_VOICE_HOST=127.0.0.1
+Environment=KITTY_MCP_VOICE_PORT=8790
+ExecStart=/usr/bin/python3 /opt/kitty/bin/mcp-voice-agent.py
+Restart=always
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,4 @@
+service	endpoint_or_scope	start_mode	room_binding
+archive_room_local	/home/t79/KITTY/ARCHIVING_ROOM	local	ARCHIVING_ROOM
+kitty_evidence_journal	/home/t79/KITTY/evidence/journal	local	ARCHIVING_ROOM
+command_bus_audit	/home/t79/KITTY/evidence/journal/command_bus.audit.jsonl	local	ARCHIVING_ROOM

@@ -1,0 +1,19 @@
+[Unit]
+Description=VXSTATION MCP Linux Admin
+After=network.target docker.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/kitty
+Environment=PYTHONUNBUFFERED=1
+Environment=KITTY_MCP_LINUX_ADMIN_HOST=127.0.0.1
+Environment=KITTY_MCP_LINUX_ADMIN_PORT=8877
+Environment=KITTY_COMPOSE_FILE=/opt/kitty/docker/compose.yml
+ExecStart=/usr/bin/python3 /opt/kitty/bin/mcp-linux-admin.py
+Restart=always
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

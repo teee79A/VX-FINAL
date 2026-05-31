@@ -1,0 +1,6 @@
+captured_at=2026-04-04T23:53:07Z
+intake_files=1
+processing_files=1
+aggregation_files=1
+response_files=1
+output_files=1

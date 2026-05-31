@@ -1,0 +1,12 @@
+engine_id	role	binary_or_home	state	primary_use
+beancount_ledger	double-entry commercial ledger	/home/t79/.local/bin/bean-check	active	ledger integrity and accounting checks
+fava_dashboard	ledger web dashboard	/home/t79/.local/bin/fava	active	ledger visual operations
+n8n_workflow	api/workflow automation	/home/t79/.npm-global/bin/n8n	active	webhook and workflow orchestration
+temporal_dispatcher	distributed workflow execution	/home/t79/.local/bin/temporal	active	long-running room dispatch
+airflow_scheduler	dag scheduler	/home/t79/.local/bin/airflow	standby	batch pipeline orchestration
+kafka_event_bus	high-speed event bus	/home/t79/.local/opt/kafka	active	events for commercial room feeds
+qdrant_evidence_vector	vector evidence engine	docker:qdrant/qdrant	active	evidence indexing and retrieval
+boundary_secure_boundary	secure command boundary	/home/t79/.local/bin/boundary	active	controlled privileged access paths
+consul_discovery	service discovery	/home/t79/.local/bin/consul	active	service registration and health
+mcp_cli	local tool bridge	/home/t79/KITTY/.venv/bin/mcp	active	local MCP tool execution
+hookdeck_inbound_hooks	webhook ingress relay	/home/t79/.npm-global/bin/hookdeck	active	inbound commercial hook intake

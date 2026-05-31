@@ -1,0 +1,66 @@
+{
+  "observed_state": "active",
+  "transport": "mcp-loopback",
+  "route_target": "vxstation.bridge.dispatch",
+  "required_bridge_nodes_minimum": 4,
+  "legacy_active_stack_lanes": 8,
+  "legacy_reserved_nervous_system_slots": 5,
+  "required_connectors": [
+    {
+      "connector_id": "agentgateway-control",
+      "node_id": "agentgateway-control",
+      "name": "agentgateway control",
+      "role": "single command exit",
+      "install_inside": "VXSTATION",
+      "transport": "loopback",
+      "endpoint": "http://127.0.0.1:46080",
+      "required_capabilities": [
+        "gateway.dispatch",
+        "gateway.policy"
+      ],
+      "expected_service_name": "vxstation-agentgateway"
+    },
+    {
+      "connector_id": "mcp-linux-admin-local",
+      "node_id": "mcp-linux-admin-local",
+      "name": "mcp linux admin",
+      "role": "power and service control",
+      "install_inside": "VXSTATION",
+      "transport": "loopback",
+      "endpoint": "http://127.0.0.1:8877",
+      "required_capabilities": [
+        "linux.admin.power",
+        "linux.admin.status"
+      ],
+      "expected_service_name": "mcp-linux-admin"
+    },
+    {
+      "connector_id": "mcp-time-calendar-ai-room",
+      "node_id": "mcp-time-calendar-ai-room",
+      "name": "mcp time calendar",
+      "role": "time/date/calendar state",
+      "install_inside": "VXSTATION",
+      "transport": "loopback",
+      "endpoint": "http://127.0.0.1:8792",
+      "required_capabilities": [
+        "time.state",
+        "calendar.state"
+      ],
+      "expected_service_name": "mcp-time-calendar-agent"
+    },
+    {
+      "connector_id": "mcp-voice-local",
+      "node_id": "mcp-voice-local",
+      "name": "mcp voice",
+      "role": "voice and audio lane",
+      "install_inside": "VXSTATION",
+      "transport": "loopback",
+      "endpoint": "http://127.0.0.1:8790",
+      "required_capabilities": [
+        "voice.synthesis",
+        "audio.transcription"
+      ],
+      "expected_service_name": "mcp-voice-agent"
+    }
+  ]
+}

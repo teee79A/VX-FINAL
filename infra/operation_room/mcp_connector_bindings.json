@@ -1,0 +1,9 @@
+{
+  "observed_state": "active",
+  "bindings": [
+    { "connector_id": "mcp-linux-admin-local", "target": "mcp-linux-admin", "transport": "loopback" },
+    { "connector_id": "mcp-time-calendar-ai-room", "target": "mcp-time-calendar-agent", "transport": "loopback" },
+    { "connector_id": "mcp-voice-local", "target": "mcp-voice-agent", "transport": "loopback" },
+    { "connector_id": "agentgateway-control", "target": "vxstation-agentgateway", "transport": "loopback" }
+  ]
+}

@@ -1,0 +1,41 @@
+rules:
+  - id: kitty-modules-no-direct-exec-imports
+    message: "KITTY LAW: modules cannot import process execution APIs."
+    severity: ERROR
+    languages: [typescript, javascript]
+    paths:
+      include:
+        - "**/modules/**/*.ts"
+    pattern-regex: "(import\\s+.*from\\s+[\"'](node:child_process|child_process|node:vm|vm)[\"'])|(require\\([\"']child_process[\"']\\))"
+
+  - id: kitty-modules-no-direct-exec-calls
+    message: "KITTY LAW: modules cannot execute commands directly."
+    severity: ERROR
+    languages: [typescript, javascript]
+    paths:
+      include:
+        - "**/modules/**/*.ts"
+    pattern-either:
+      - pattern: exec(...)
+      - pattern: execSync(...)
+      - pattern: spawn(...)
+      - pattern: spawnSync(...)
+      - pattern: fork(...)
+
+  - id: kitty-modules-no-raw-db-imports
+    message: "KITTY LAW: modules cannot import raw database clients."
+    severity: ERROR
+    languages: [typescript, javascript]
+    paths:
+      include:
+        - "**/modules/**/*.ts"
+    pattern-regex: "import\\s+.*from\\s+[\"'](pg|pg-pool|redis|ioredis|mongodb|mongoose|mysql2|@prisma/client|typeorm|sequelize)[\"']"
+
+  - id: kitty-modules-no-command-bus-imports
+    message: "KITTY LAW: modules cannot bypass through command-bus imports."
+    severity: ERROR
+    languages: [typescript, javascript]
+    paths:
+      include:
+        - "**/modules/**/*.ts"
+    pattern-regex: "import\\s+.*from\\s+[\"'](\\.\\./)*command-bus/|import\\s+.*from\\s+[\"']@terminal-core/command-bus/"

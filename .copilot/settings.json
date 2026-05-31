@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Execute",
+      "WebFetch",
+      "mcp__filesystem",
+      "mcp__memory",
+      "mcp__git",
+      "mcp__sequential-thinking",
+      "mcp__fetch"
+    ],
+    "deny": []
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "public_surface": {
+    "service_name": "vxstation-agentgateway",
+    "bind_host": "127.0.0.1",
+    "bind_port": 46080,
+    "health_endpoint": "/health",
+    "dispatch_endpoint": "/v1/control/dispatch",
+    "meta_policy_endpoint": "/v1/meta/policy",
+    "meta_commands_endpoint": "/v1/meta/commands"
+  },
+  "policy_source": "/opt/kitty/infra/szh_central_brain/gateways/agentgateway.policy.json",
+  "command_registry_source": "/opt/kitty/infra/szh_central_brain/gateways/agentgateway.command_registry.json",
+  "notes": [
+    "rooms are internal only",
+    "engines are internal only",
+    "gateway is the single access path"
+  ]
+}

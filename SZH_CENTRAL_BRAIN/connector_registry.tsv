@@ -1,0 +1,22 @@
+connector_id	type	source	target	state	room_binding
+agentgateway-control	gateway	127.0.0.1:46080	vxstation.bridge.dispatch	active	SZH_CENTRAL_BRAIN
+mcp-linux-admin-local	mcp	127.0.0.1:8877	linux.admin.power/status	active	SZH_CENTRAL_BRAIN
+mcp-time-calendar-ai-room	mcp	127.0.0.1:8792	time/calendar services	active	SZH_CENTRAL_BRAIN
+mcp-voice-local	mcp	127.0.0.1:8790	voice/audio services	active	SZH_CENTRAL_BRAIN
+zapier-commercial-automation	iPaaS	https://zapier.com	crm/calendar automation workflows	active	SZH_CENTRAL_BRAIN
+microsoft-power-platform	iPaaS	https://powerautomate.microsoft.com	workflow automation and BI orchestration across departments	active	SZH_CENTRAL_BRAIN
+sql-server-connector	database	sqlserver://external-systems	cross-system SQL joins into central hub	active	SZH_CENTRAL_BRAIN
+mysql-connector	database	mysql://business-systems	centralize structured sales and inventory data into single source of truth	active	SZH_CENTRAL_BRAIN
+business-central-connector	erp	https://businesscentral.dynamics.com	automate sales orders, item management, and customer entities	active	SZH_CENTRAL_BRAIN
+woocommerce-sqlserver-connector	ecommerce	sqlserver://commerce-db	sync WooCommerce product and sales data into central SQL hub	active	SZH_CENTRAL_BRAIN
+dapr-runtime-connector	distributed-runtime	http://127.0.0.1:3500	state, pub/sub, and service invocation runtime integration	active	SZH_CENTRAL_BRAIN
+ray-temporal-compute-connector	compute-orchestration	http://127.0.0.1:8265	distributed compute and workflow orchestration integration	active	SZH_CENTRAL_BRAIN
+vdirsyncer-calendar-contact-sync	calendar-contact-sync	/home/t79/.local/bin/vdirsyncer	calendar and contact synchronization into central operations plane	active	SZH_CENTRAL_BRAIN
+jentic-remote-gateway	secure-remote-gateway	https://gateway.jentic.com	secure remote server bridge and orchestration control path	active	SZH_CENTRAL_BRAIN
+direct-rest-api-connector	rest-api	https://api.*	custom direct REST API integrations without MCP	active	SZH_CENTRAL_BRAIN
+doss-operations-cloud-connector	operations-cloud	https://app.doss.com	live inventory and ARP operations cloud integration	active	SZH_CENTRAL_BRAIN
+netsuite-erp-connector	erp	https://system.netsuite.com	global ERP operations and financial entity sync	active	SZH_CENTRAL_BRAIN
+teamcal-ai-scheduler-connector	scheduling	https://teamcal.ai	global AI scheduling and workforce calendar coordination	active	SZH_CENTRAL_BRAIN
+power-automate-connector	iPaaS	https://powerautomate.microsoft.com	microsoft ecosystem workflow bridge	active	SZH_CENTRAL_BRAIN
+control-plane-router	registry	kitty/data/vxstation_control	room routing and actions	active	SZH_CENTRAL_BRAIN
+topology-bridge	topology	kitty/bridge/nodes.json	bridge topology dispatch	active	SZH_CENTRAL_BRAIN

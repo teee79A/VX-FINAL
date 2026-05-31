@@ -1,0 +1,6 @@
+connector_id	type	source	target	state	room_binding
+filesystem_localhost	filesystem	VXSTATION runtime	ARCHIVING_ROOM	active	ARCHIVING_ROOM
+hash_chain_connector	integrity	frozen_records	baselines	active	ARCHIVING_ROOM
+signature_connector	crypto	baselines	signed_logs	active	ARCHIVING_ROOM
+rollback_pointer_connector	state	signed_logs	rollback_reference_state	active	ARCHIVING_ROOM
+kitty_zellij_panel_surface	ui	kitty terminal	zellij archive tabs	active	ARCHIVING_ROOM

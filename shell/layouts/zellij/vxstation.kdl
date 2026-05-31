@@ -1,0 +1,143 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="VXSTATION-TV" {
+        pane split_direction="Horizontal" {
+            pane size="22%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_vxstation_filesystem_panel.sh"
+            pane split_direction="Vertical" {
+                pane size="56%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_live_surface.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_vxstation_event_bus.sh"
+            }
+            pane size="32%" split_direction="Vertical" {
+                pane size="28%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_control_plane_live.sh"
+                pane size="34%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_signal_aggregator.sh"
+                pane split_direction="Horizontal" {
+                    pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_market_board.sh"
+                    pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_power_room_live.sh"
+                }
+            }
+        }
+    }
+
+    tab name="OPERATION_ROOM" {
+        pane split_direction="Vertical" {
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_live_surface.sh"
+                pane split_direction="Vertical" {
+                    pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_calendar_status.sh"
+                    pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_calcure.sh"
+                }
+            }
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_market_board.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_mapscii.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_power_room_live.sh"
+            }
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_mcp_stream.sh"
+        }
+    }
+
+    tab name="MEDIA_PLASMA" {
+        pane split_direction="Vertical" {
+            pane size="58%" split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_media_video.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_media_audio.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_voice_lane.sh"
+            }
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operation_time_date.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_btop.sh"
+            }
+        }
+    }
+
+    tab name="ARCHIVING_ROOM" {
+        pane split_direction="Vertical" {
+            pane size="22%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archiving_timeline.sh"
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archiving_evidence_viewer.sh"
+            pane size="22%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archiving_integrity_check.sh"
+        }
+    }
+
+    tab name="FEEDBACK_CLOUD_VYRDX_ROOM" {
+        pane split_direction="Vertical" {
+            pane size="20%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_intake_radar.sh"
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_signal_aggregator.sh"
+            pane size="20%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_feedback_response_feed.sh"
+        }
+    }
+
+    tab name="SZH_CENTRAL_BRAIN" {
+        pane split_direction="Vertical" {
+            pane size="46%" split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_room_overview.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_runtime_status.sh"
+            }
+            pane size="30%" split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_operator_actions.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_execution_monitoring.sh"
+            }
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_evidence_state.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_orchestration_logic.sh"
+            }
+        }
+    }
+
+    tab name="VYRDOX_HIDDEN_ROOT" {
+        pane split_direction="Vertical" {
+            pane size="55%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_vyrdox_hidden_root.sh"
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archiving_evidence_viewer.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_mcp_stream.sh"
+            }
+        }
+    }
+
+    tab name="TERMINAL_CONTROL" {
+        pane split_direction="Vertical" {
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_terminal_bridge_live.sh"
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_terminal_ssh_import_view.sh"
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operator_shell.sh"
+        }
+    }
+
+    tab name="RADAR_GLASS" {
+        pane split_direction="Vertical" {
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_btop.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_btop.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_btop.sh"
+            }
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_btop.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_mapscii.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_btop.sh"
+            }
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_btop.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_btop.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_btop.sh"
+            }
+        }
+    }
+
+    tab name="COMMAND_ROOM" {
+        pane split_direction="Horizontal" {
+            pane size="34%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_btop.sh"
+            pane split_direction="Vertical" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_station_map.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_operator_shell.sh"
+            }
+            pane size="30%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_vxstation_event_bus.sh"
+        }
+    }
+}

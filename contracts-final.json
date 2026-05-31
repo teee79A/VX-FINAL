@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "asOf": "2026-04-17",
+  "network": "arbitrum_one",
+  "chainId": 42161,
+  "governance": {
+    "model": "safe_governed_immutable_core",
+    "safe": {
+      "address": "0x7b281C5d9F863e50264aA7F7583C2d5626ed4501",
+      "threshold": 2,
+      "owners": [
+        "0xF46104e2CE5772dfd277B5E781f11fCad5902331",
+        "0xBB80da12B9C2c8d6cD3b495BcA07D12291824bA7"
+      ]
+    },
+    "timelock": null,
+    "guardian": null,
+    "statements": [
+      "Safe is the final authority in the active deployment.",
+      "No active EOA owner or admin was found on the active contract set.",
+      "Core contracts are direct deployments, not upgradeable proxies.",
+      "No active timelock is present in the current deployment.",
+      "No active guardian is present in the current deployment."
+    ]
+  },
+  "contracts": [
+    {
+      "name": "VyrdonBoundary",
+      "address": "0x92CA07e8C051D9c77dC0b422b7c791FA13B18961",
+      "classification": "SAFE_CONTROLLED",
+      "deployed": true,
+      "ownerMethod": "owner()",
+      "owner": "0x7b281C5d9F863e50264aA7F7583C2d5626ed4501",
+      "ownerType": "SAFE_CONTRACT",
+      "proxyAdmin": null,
+      "implementation": null,
+      "notes": [
+        "owner is immutable at deploy time",
+        "not an upgradeable proxy",
+        "boundary control is anchored to the canonical Safe"
+      ]
+    },
+    {
+      "name": "ExecutionSeal",
+      "address": "0x9b9b7BfA27b162b9C515F382592613C74a4E5ac4",
+      "classification": "IMMUTABLE_OWNERLESS",
+      "deployed": true,
+      "ownerMethod": null,
+      "owner": null,
+      "ownerType": null,
+      "proxyAdmin": null,
+      "implementation": null,
+      "notes": [
+        "direct deployment",
+        "no owner() or admin() control surface",
+        "ASRSATA and fee law are immutable constructor state"
+      ]
+    },
+    {
+      "name": "EscrowVault",
+      "address": "0x4C16a1C25cd55748F6997BE60142eAA6E00E34e7",
+      "classification": "IMMUTABLE_OWNERLESS",
+      "deployed": true,
+      "ownerMethod": null,
+      "owner": null,
+      "ownerType": null,
+      "proxyAdmin": null,
+      "implementation": null,
+      "notes": [
+        "direct deployment",
+        "no owner() or admin() control surface",
+        "immutable boundary = 0x92CA07e8C051D9c77dC0b422b7c791FA13B18961",
+        "immutable beneficiary = 0x7b281C5d9F863e50264aA7F7583C2d5626ed4501"
+      ]
+    },
+    {
+      "name": "VyrdonCore",
+      "address": "0x4C13bBD3996455ED8a7662ec9D53F20f4b1B805A",
+      "classification": "IMMUTABLE_OWNERLESS",
+      "deployed": true,
+      "ownerMethod": null,
+      "owner": null,
+      "ownerType": null,
+      "proxyAdmin": null,
+      "implementation": null,
+      "notes": [
+        "direct deployment",
+        "no owner() or admin() control surface",
+        "ASRSATA token and exact fee are immutable constructor state"
+      ]
+    },
+    {
+      "name": "ASRSATAIntentAnchor",
+      "address": "0x76c545299Bc6bcbDFA06026E3368c6e1EFaFacFA",
+      "classification": "IMMUTABLE_OWNERLESS",
+      "deployed": true,
+      "ownerMethod": null,
+      "owner": null,
+      "ownerType": null,
+      "proxyAdmin": null,
+      "implementation": null,
+      "notes": [
+        "direct deployment",
+        "no owner() or admin() control surface",
+        "ASRSATA token and fee are immutable constructor state"
+      ]
+    },
+    {
+      "name": "ASRSATA",
+      "address": "0x5f13240C70aA7BfEdD76cD70F906d70CC0515573",
+      "classification": "IMMUTABLE_OWNERLESS",
+      "deployed": true,
+      "ownerMethod": null,
+      "owner": null,
+      "ownerType": null,
+      "proxyAdmin": null,
+      "implementation": null,
+      "notes": [
+        "fixed-supply token",
+        "direct deployment",
+        "no owner() or admin() control surface"
+      ]
+    }
+  ]
+}

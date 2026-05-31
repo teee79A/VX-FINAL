@@ -1,0 +1,14 @@
+{
+  "components": [
+    {
+      "component_id": "operation_room_control",
+      "state": "active",
+      "scope": "kitty/OPERATION_ROOM"
+    },
+    {
+      "component_id": "operation_room_monitoring",
+      "state": "active",
+      "scope": "kitty/OPERATION_ROOM/monitoring/latest_status.json"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
+  },
+  "include": [
+    "root.ts",
+    "ENGINES/**/*.ts",
+    "SZH_CENTRAL_BRAIN/**/*.ts",
+    "bridge/**/*.ts",
+    "command-bus/**/*.ts",
+    "dispatch/**/*.ts",
+    "evidence/**/*.ts",
+    "modules/**/*.ts",
+    "policy/**/*.ts",
+    "registry/**/*.ts",
+    "shared/**/*.ts",
+    "shell/**/*.ts",
+    "terminal/**/*.ts",
+    "tests/**/*.ts",
+    "wrappers/**/*.ts",
+    "vyrdx-bridge/**/*.ts",
+    "server/**/*.ts",
+    "consolab/**/*.ts"
+  ],
+  "exclude": [
+    "state",
+    "node_modules",
+    "dist"
+  ]
+}

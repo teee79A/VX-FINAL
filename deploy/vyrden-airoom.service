@@ -1,0 +1,28 @@
+[Unit]
+Description=VYRDEN AI Room Runtime Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/vyrden-airoom/current/app/vyrden-airoom
+EnvironmentFile=-/opt/vyrden-airoom/current/app/vyrden-airoom/.env
+Environment=NODE_ENV=production
+Environment=KITTY_ROOT=/opt/vyrden-airoom/shared
+Environment=MEMORY_DIR=/opt/vyrden-airoom/shared/.vyrdon-memory
+ExecStart=/usr/bin/node dist/server.js
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=vyrden-airoom
+
+# Hardening
+ProtectSystem=strict
+ReadWritePaths=/opt/vyrden-airoom/shared
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

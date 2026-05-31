@@ -1,0 +1,48 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="SZH_CENTRAL_BRAIN" {
+        pane split_direction="Horizontal" {
+            pane size="42%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_room_overview.sh"
+            pane split_direction="Vertical" {
+                pane size="52%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_runtime_status.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_operator_actions.sh"
+            }
+        }
+    }
+
+    tab name="SZH_LIVE_CONTROL" {
+        pane split_direction="Horizontal" {
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_live_control_surface.sh"
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_orchestration_logic.sh"
+        }
+    }
+
+    tab name="SZH_MONITOR" {
+        pane split_direction="Vertical" {
+            pane size="56%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_execution_monitoring.sh"
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_control_plane_live.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_mcp_stream.sh"
+            }
+        }
+    }
+
+    tab name="SZH_EVIDENCE" {
+        pane split_direction="Vertical" {
+            pane size="54%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_szh_evidence_state.sh"
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_terminal_bridge_live.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_terminal_ssh_import_view.sh"
+            }
+        }
+    }
+}

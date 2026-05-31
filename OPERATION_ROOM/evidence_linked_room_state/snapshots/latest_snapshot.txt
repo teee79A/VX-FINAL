@@ -1,0 +1,6 @@
+captured_at=2026-04-19T04:21:33Z
+overall_status=green
+missing_count=0
+ops_status_file=/home/t79/KITTY/OPERATION_ROOM/monitoring/latest_status.json
+command_audit=/home/t79/KITTY/evidence/journal/command_bus.audit.jsonl
+module_journal=/home/t79/KITTY/evidence/journal/module_actions.jsonl

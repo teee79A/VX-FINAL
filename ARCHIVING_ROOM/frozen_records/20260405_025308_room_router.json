@@ -1,0 +1,35 @@
+{
+  "declared_total": 6,
+  "routes": [
+    {
+      "route_id": "operation_room",
+      "room": "OPERATION_ROOM",
+      "route_target": "vxstation.bridge.dispatch"
+    },
+    {
+      "route_id": "commercial_room",
+      "room": "COMMERCIAL_ROOM",
+      "route_target": "vxstation.bridge.dispatch"
+    },
+    {
+      "route_id": "feedback_room",
+      "room": "FEEDBACK_CLOUD_VYRDX_ROOM",
+      "route_target": "vxstation.bridge.dispatch"
+    },
+    {
+      "route_id": "archive_room",
+      "room": "ARCHIVING_ROOM",
+      "route_target": "vxstation.bridge.dispatch"
+    },
+    {
+      "route_id": "central_brain",
+      "room": "SZH_CENTRAL_BRAIN",
+      "route_target": "vxstation.bridge.dispatch"
+    },
+    {
+      "route_id": "vyrdox_hidden_root",
+      "room": "VYRDOX_HIDDEN_ROOT",
+      "route_target": "vxstation.bridge.dispatch"
+    }
+  ]
+}

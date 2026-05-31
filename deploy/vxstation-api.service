@@ -1,0 +1,25 @@
+[Unit]
+Description=VXSTATION API — Fastify backend
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/vxstation/current
+EnvironmentFile=/opt/vxstation/shared/deploy/.env
+ExecStart=/usr/bin/node dist/server/index.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=vxstation-api
+
+# Hardening
+ProtectSystem=strict
+ReadWritePaths=/opt/vxstation/shared/evidence/journal /opt/vxstation/shared/logs
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

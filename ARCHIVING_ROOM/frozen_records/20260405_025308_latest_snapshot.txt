@@ -1,0 +1,9 @@
+captured_at=2026-04-04T23:53:07Z
+intake_files=1
+processing_files=1
+aggregation_files=1
+response_files=1
+output_files=1
+command_audit_file=/home/t79/KITTY/evidence/journal/command_bus.audit.jsonl
+module_journal_file=/home/t79/KITTY/evidence/journal/module_actions.jsonl
+room_audit_file=/home/t79/KITTY/evidence/journal/feedback_cloud_vyrdx_room.audit.jsonl

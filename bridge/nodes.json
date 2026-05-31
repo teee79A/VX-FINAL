@@ -1,0 +1,77 @@
+{
+  "nodes": [
+    {
+      "node_id": "agentgateway-control",
+      "endpoint": "http://127.0.0.1:46080",
+      "status": "online",
+      "trust_level": "private",
+      "capabilities": [
+        "gateway.dispatch",
+        "gateway.policy",
+        "mcp.transport.local"
+      ],
+      "connector": {
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      "topology": {
+        "role": "gateway_control"
+      }
+    },
+    {
+      "node_id": "mcp-linux-admin-local",
+      "endpoint": "http://127.0.0.1:8877",
+      "status": "online",
+      "trust_level": "private",
+      "capabilities": [
+        "linux.admin.power",
+        "linux.admin.status",
+        "linux.admin.logs",
+        "mcp.transport.local"
+      ],
+      "connector": {
+        "connector_id": "mcp-linux-admin-local",
+        "transport": "loopback"
+      },
+      "topology": {
+        "role": "power_control"
+      }
+    },
+    {
+      "node_id": "mcp-time-calendar-ai-room",
+      "endpoint": "http://127.0.0.1:8792",
+      "status": "online",
+      "trust_level": "private",
+      "capabilities": [
+        "time.state",
+        "calendar.state",
+        "mcp.transport.local"
+      ],
+      "connector": {
+        "connector_id": "mcp-time-calendar-ai-room",
+        "transport": "loopback"
+      },
+      "topology": {
+        "role": "time_calendar_state"
+      }
+    },
+    {
+      "node_id": "mcp-voice-local",
+      "endpoint": "http://127.0.0.1:8790",
+      "status": "online",
+      "trust_level": "private",
+      "capabilities": [
+        "voice.synthesis",
+        "audio.transcription",
+        "mcp.transport.local"
+      ],
+      "connector": {
+        "connector_id": "mcp-voice-local",
+        "transport": "loopback"
+      },
+      "topology": {
+        "role": "voice_audio_lane"
+      }
+    }
+  ]
+}

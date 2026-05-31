@@ -1,0 +1,947 @@
+{
+  "captured_at": "2026-04-19T03:39:10Z",
+  "room": "FEEDBACK_CLOUD_VYRDX_ROOM",
+  "section": "vyrdx_facing_feedback_outputs",
+  "vxstation_control": {
+    "desired_state": "active",
+    "observed_state": "active",
+    "route_target": "vxstation.bridge.dispatch",
+    "engine_registry": {
+      "declared_total": 22,
+      "catalogued_total": 22,
+      "gap_total": 0,
+      "color_state": "green",
+      "control_enabled_total": 22
+    },
+    "adapter_registry": {
+      "declared_total": 23,
+      "catalogued_total": 23,
+      "gap_total": 0,
+      "color_state": "green"
+    },
+    "server_registry": {
+      "declared_total": 10,
+      "catalogued_total": 10,
+      "gap_total": 0,
+      "color_state": "green",
+      "green_total": 10,
+      "red_total": 0,
+      "servers": [
+        {
+          "server_id": "agentgateway",
+          "name": "AgentGateway",
+          "service_key": "agentgateway",
+          "check_type": "service",
+          "critical": true,
+          "color_state": "green",
+          "detail": "ok"
+        },
+        {
+          "server_id": "mcp_linux_admin",
+          "name": "MCP Linux Admin",
+          "service_key": "mcp_linux_admin",
+          "check_type": "health",
+          "critical": true,
+          "color_state": "green",
+          "detail": "mcp-linux-admin"
+        },
+        {
+          "server_id": "mcp_time_calendar",
+          "name": "MCP Time Calendar",
+          "service_key": "mcp_time_calendar_agent",
+          "check_type": "health",
+          "critical": true,
+          "color_state": "green",
+          "detail": "mcp-time-calendar-agent"
+        },
+        {
+          "server_id": "mcp_voice",
+          "name": "MCP Voice",
+          "service_key": "mcp_voice_agent",
+          "check_type": "health",
+          "critical": true,
+          "color_state": "green",
+          "detail": "mcp-voice-agent"
+        },
+        {
+          "server_id": "netdata",
+          "name": "Netdata",
+          "service_key": "netdata_cloud",
+          "check_type": "health",
+          "critical": true,
+          "color_state": "green",
+          "detail": "netdata"
+        },
+        {
+          "server_id": "clickhouse",
+          "name": "ClickHouse",
+          "service_key": "clickhouse",
+          "check_type": "health",
+          "critical": true,
+          "color_state": "green",
+          "detail": "clickhouse"
+        },
+        {
+          "server_id": "radar_surface",
+          "name": "Radar Surface",
+          "service_key": "radar_surface",
+          "check_type": "command",
+          "critical": true,
+          "color_state": "green",
+          "detail": "/home/t79/KITTY/bin/vxstation_radar.py"
+        },
+        {
+          "server_id": "tenderly_cli",
+          "name": "Tenderly CLI",
+          "service_key": "tenderly_cli",
+          "check_type": "command",
+          "critical": true,
+          "color_state": "green",
+          "detail": "tenderly"
+        },
+        {
+          "server_id": "octosql_cli",
+          "name": "OctoSQL CLI",
+          "service_key": "octosql_cli",
+          "check_type": "command",
+          "critical": true,
+          "color_state": "green",
+          "detail": "octosql"
+        },
+        {
+          "server_id": "steampipe_cli",
+          "name": "Steampipe CLI",
+          "service_key": "steampipe_cli",
+          "check_type": "command",
+          "critical": true,
+          "color_state": "green",
+          "detail": "steampipe"
+        }
+      ]
+    },
+    "room_router": {
+      "declared_total": 6,
+      "catalogued_total": 6,
+      "gap_total": 0,
+      "color_state": "green",
+      "route_target": "vxstation.bridge.dispatch",
+      "route_target_mismatch_total": 0
+    },
+    "actions_api": {
+      "declared_total": 15,
+      "catalogued_total": 15,
+      "gap_total": 0,
+      "color_state": "green",
+      "base_endpoint": "http://127.0.0.1:46080/v1/control/dispatch",
+      "gateway_health_ok": true
+    },
+    "collectors": {
+      "declared_total": 6,
+      "catalogued_total": 6,
+      "gap_total": 0,
+      "color_state": "green",
+      "green_total": 6,
+      "red_total": 0,
+      "rows": [
+        {
+          "collector_id": "ops_status_file",
+          "type": "file",
+          "color_state": "green",
+          "detail": "present"
+        },
+        {
+          "collector_id": "command_audit_file",
+          "type": "file",
+          "color_state": "green",
+          "detail": "present"
+        },
+        {
+          "collector_id": "agentgateway_health",
+          "type": "service",
+          "color_state": "green",
+          "detail": "ok"
+        },
+        {
+          "collector_id": "mcp_lanes_health",
+          "type": "service_group",
+          "color_state": "green",
+          "detail": "ok"
+        },
+        {
+          "collector_id": "station_map_binary",
+          "type": "command",
+          "color_state": "green",
+          "detail": "present"
+        },
+        {
+          "collector_id": "agentgateway_binary",
+          "type": "command",
+          "color_state": "green",
+          "detail": "present"
+        }
+      ]
+    },
+    "cloud_target_manager": {
+      "declared_total": 3,
+      "catalogued_total": 3,
+      "gap_total": 0,
+      "color_state": "red",
+      "green_total": 2,
+      "red_total": 1,
+      "targets": [
+        {
+          "target_id": "vyrdon_public_face",
+          "profile": "public-face",
+          "service_key": "",
+          "probe_url": "https://vyrdon.com",
+          "required_reachability": true,
+          "detail": "[Errno -5] No address associated with hostname",
+          "color_state": "red"
+        },
+        {
+          "target_id": "vyrdon_cloud_build",
+          "profile": "build-runtime",
+          "service_key": "",
+          "probe_url": "https://vyrdx.vyrdon.com/api/build",
+          "required_reachability": true,
+          "detail": "2026-04-19T03:03:31Z-2531c00 2531c00 2026-04-19T03:03:31Z",
+          "color_state": "green"
+        },
+        {
+          "target_id": "vyrdon_authority_plane",
+          "profile": "authority",
+          "service_key": "",
+          "probe_url": "https://consolab.vyrdon.com/health",
+          "required_reachability": true,
+          "detail": "consolelab-authority healthy",
+          "color_state": "green"
+        }
+      ]
+    },
+    "color_state": "red"
+  },
+  "operation_room": {
+    "desired_state": "active",
+    "observed_state": "active",
+    "install_manifest_state": "active",
+    "mcp_binding_state": "active",
+    "infrastructure": {
+      "desired_state": "active",
+      "observed_state": "active",
+      "storage_adapters": {
+        "declared_total": 6,
+        "catalogued_total": 6,
+        "gap_total": 0,
+        "nvme_total": 3,
+        "sas_total": 1,
+        "sata_total": 1,
+        "form_factor_total": 2,
+        "controller_total": 2,
+        "inventory_state": "catalog_complete"
+      },
+      "power_management": {
+        "declared_total": 6,
+        "catalogued_total": 6,
+        "gap_total": 0,
+        "remote_power_control_total": 2,
+        "centralized_power_management_total": 1,
+        "scheduled_maintenance_total": 1,
+        "resilience_total": 2,
+        "console_interface_total": 1,
+        "power_path_total": 3,
+        "inventory_state": "catalog_complete"
+      }
+    },
+    "backbone": {
+      "desired_state": "active",
+      "observed_state": "active",
+      "server_total": 523,
+      "physical_backbone_declared_total": 5,
+      "physical_backbone_catalogued_total": 5,
+      "physical_backbone_gap_total": 0,
+      "data_fabric_total": 2,
+      "oob_management_total": 2,
+      "power_recovery_total": 1,
+      "room_wiring_total": 5,
+      "inventory_state": "catalog_complete",
+      "color_state": "green"
+    },
+    "runtime_entry_total": 12,
+    "engine_total": 12,
+    "green_total": 23,
+    "red_total": 1,
+    "critical_entry_total": 10,
+    "critical_engine_total": 8,
+    "critical_green_total": 18,
+    "critical_red_total": 0,
+    "color_state": "green",
+    "entries": [
+      {
+        "entry_id": "agentgateway_health",
+        "name": "AgentGateway Health",
+        "kind": "service",
+        "critical": true,
+        "color_state": "green",
+        "detail": "ok"
+      },
+      {
+        "entry_id": "mcp_linux_admin_health",
+        "name": "MCP Linux Admin",
+        "kind": "service",
+        "critical": true,
+        "color_state": "green",
+        "detail": "mcp-linux-admin"
+      },
+      {
+        "entry_id": "mcp_time_calendar_health",
+        "name": "MCP Time Calendar",
+        "kind": "service",
+        "critical": true,
+        "color_state": "green",
+        "detail": "mcp-time-calendar-agent"
+      },
+      {
+        "entry_id": "mcp_voice_health",
+        "name": "MCP Voice",
+        "kind": "service",
+        "critical": true,
+        "color_state": "green",
+        "detail": "mcp-voice-agent"
+      },
+      {
+        "entry_id": "netdata_health",
+        "name": "Netdata",
+        "kind": "service",
+        "critical": true,
+        "color_state": "green",
+        "detail": "netdata"
+      },
+      {
+        "entry_id": "clickhouse_health",
+        "name": "ClickHouse",
+        "kind": "service",
+        "critical": true,
+        "color_state": "green",
+        "detail": "clickhouse"
+      },
+      {
+        "entry_id": "radar_surface",
+        "name": "Radar Surface",
+        "kind": "command",
+        "critical": true,
+        "color_state": "green",
+        "detail": "/home/t79/KITTY/bin/vxstation_radar.py"
+      },
+      {
+        "entry_id": "tenderly_cli",
+        "name": "Tenderly CLI",
+        "kind": "command",
+        "critical": true,
+        "color_state": "green",
+        "detail": "tenderly"
+      },
+      {
+        "entry_id": "octosql_cli",
+        "name": "OctoSQL CLI",
+        "kind": "command",
+        "critical": true,
+        "color_state": "green",
+        "detail": "octosql"
+      },
+      {
+        "entry_id": "steampipe_cli",
+        "name": "Steampipe CLI",
+        "kind": "command",
+        "critical": true,
+        "color_state": "green",
+        "detail": "steampipe"
+      },
+      {
+        "entry_id": "openhands",
+        "name": "OpenHands Container",
+        "kind": "container",
+        "critical": false,
+        "color_state": "green",
+        "detail": "running"
+      },
+      {
+        "entry_id": "vllm",
+        "name": "vLLM Container",
+        "kind": "container",
+        "critical": false,
+        "color_state": "red",
+        "detail": "not_found"
+      }
+    ],
+    "engines": [
+      {
+        "engine_id": "agentgateway_control",
+        "name": "AgentGateway Control",
+        "class": "control",
+        "observed_state": "active",
+        "critical": true,
+        "color_state": "green",
+        "agent_suite": [],
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/gateway_control.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "mcp_linux_admin",
+        "name": "MCP Linux Admin",
+        "class": "control",
+        "observed_state": "active",
+        "critical": true,
+        "color_state": "green",
+        "agent_suite": [],
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/operation_room/mcp_connector_bindings.json",
+        "connector_id": "mcp-linux-admin-local",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "mcp_time_calendar",
+        "name": "MCP Time Calendar",
+        "class": "time",
+        "observed_state": "active",
+        "critical": true,
+        "color_state": "green",
+        "agent_suite": [],
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/operation_room/mcp_connector_bindings.json",
+        "connector_id": "mcp-time-calendar-ai-room",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "mcp_voice",
+        "name": "MCP Voice",
+        "class": "media",
+        "observed_state": "active",
+        "critical": true,
+        "color_state": "green",
+        "agent_suite": [],
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/operation_room/mcp_connector_bindings.json",
+        "connector_id": "mcp-voice-local",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "radar",
+        "name": "Radar",
+        "class": "signal",
+        "observed_state": "active",
+        "critical": true,
+        "color_state": "green",
+        "agent_suite": [
+          "radar"
+        ],
+        "install_inside": null,
+        "install_manifest": null,
+        "connector_id": null,
+        "transport": null
+      },
+      {
+        "engine_id": "tenderly",
+        "name": "Tenderly",
+        "class": "chain",
+        "observed_state": "active",
+        "critical": true,
+        "color_state": "green",
+        "agent_suite": [
+          "tenderly"
+        ],
+        "install_inside": null,
+        "install_manifest": null,
+        "connector_id": null,
+        "transport": null
+      },
+      {
+        "engine_id": "octosql",
+        "name": "OctoSQL",
+        "class": "query",
+        "observed_state": "active",
+        "critical": true,
+        "color_state": "green",
+        "agent_suite": [
+          "octosql"
+        ],
+        "install_inside": null,
+        "install_manifest": null,
+        "connector_id": null,
+        "transport": null
+      },
+      {
+        "engine_id": "steampipe",
+        "name": "Steampipe",
+        "class": "query",
+        "observed_state": "active",
+        "critical": true,
+        "color_state": "green",
+        "agent_suite": [
+          "steampipe"
+        ],
+        "install_inside": null,
+        "install_manifest": null,
+        "connector_id": null,
+        "transport": null
+      },
+      {
+        "engine_id": "taskwarrior",
+        "name": "Taskwarrior",
+        "class": "planner",
+        "observed_state": "active",
+        "critical": false,
+        "color_state": "green",
+        "agent_suite": [
+          "taskwarrior"
+        ],
+        "install_inside": null,
+        "install_manifest": null,
+        "connector_id": null,
+        "transport": null
+      },
+      {
+        "engine_id": "ticker",
+        "name": "Ticker",
+        "class": "market",
+        "observed_state": "active",
+        "critical": false,
+        "color_state": "green",
+        "agent_suite": [
+          "ticker"
+        ],
+        "install_inside": null,
+        "install_manifest": null,
+        "connector_id": null,
+        "transport": null
+      },
+      {
+        "engine_id": "pudb",
+        "name": "PuDB",
+        "class": "debug",
+        "observed_state": "active",
+        "critical": false,
+        "color_state": "green",
+        "agent_suite": [
+          "pudb"
+        ],
+        "install_inside": null,
+        "install_manifest": null,
+        "connector_id": null,
+        "transport": null
+      },
+      {
+        "engine_id": "zsh_auto_suggestions",
+        "name": "ZSH Auto Suggestions",
+        "class": "shell",
+        "observed_state": "active",
+        "critical": false,
+        "color_state": "green",
+        "agent_suite": [
+          "zsh"
+        ],
+        "install_inside": null,
+        "install_manifest": null,
+        "connector_id": null,
+        "transport": null
+      }
+    ]
+  },
+  "central_brain": {
+    "desired_state": "active",
+    "observed_state": "active",
+    "install_root": "/home/t79/KITTY/SZH_CENTRAL_BRAIN",
+    "install_manifest_state": "active",
+    "mcp_binding_state": "active",
+    "gateway": {
+      "gateway_id": "vxstation-agentgateway",
+      "name": "VXSTATION Agent Gateway",
+      "provider": "local-python",
+      "role": "single secure command exit",
+      "desired_state": "active",
+      "observed_state": "active",
+      "install_inside": "VXSTATION",
+      "install_manifest": "infra/szh_central_brain/gateway_control.manifest.json",
+      "route_target": "vxstation.bridge.dispatch",
+      "security_mode": "loopback_only_bearer_token_caller_allowlist",
+      "bind": "127.0.0.1:46080",
+      "bind_state": "listening",
+      "endpoint": "http://127.0.0.1:46080",
+      "health_ok": true,
+      "health": {
+        "ok": true,
+        "service": "vxstation-agentgateway",
+        "status": "running",
+        "gateway_id": "vxstation-agentgateway",
+        "bind": "127.0.0.1:46080",
+        "commands": 26,
+        "time": 1776569951152
+      },
+      "loopback_only": true,
+      "public_exposure": "forbidden",
+      "bearer_token_required": true,
+      "caller_header_required": true,
+      "color_state": "green"
+    },
+    "integration_adapters": {
+      "desired_state": "active",
+      "observed_state": "active",
+      "declared_total": 10,
+      "catalogued_total": 10,
+      "gap_total": 0,
+      "cloud_connector_total": 2,
+      "business_connector_total": 5,
+      "engineering_connector_total": 3,
+      "hardware_acceleration_total": 1,
+      "thermal_control_total": 1,
+      "inventory_state": "catalog_complete",
+      "color_state": "green"
+    },
+    "logic_adapters": {
+      "desired_state": "active",
+      "observed_state": "active",
+      "declared_total": 10,
+      "catalogued_total": 10,
+      "gap_total": 0,
+      "mcp_total": 5,
+      "asset_mapping_total": 3,
+      "infrastructure_control_total": 5,
+      "room_isolation_total": 2,
+      "inventory_state": "catalog_complete",
+      "color_state": "green"
+    },
+    "power_control": {
+      "desired_state": "active",
+      "observed_state": "active",
+      "gateway_id": "vxstation-agentgateway",
+      "route_target": "vxstation.bridge.dispatch",
+      "primary_power_surface": "mcp-linux-admin",
+      "server_total": 523,
+      "management_oob_network": "127.0.0.1/loopback",
+      "required_remote_power_surface_total": 4,
+      "required_scheduled_maintenance_surface_total": 2,
+      "required_connector_id": "mcp-linux-admin-local",
+      "connector_color_state": "green",
+      "connector_detail": "mcp-linux-admin",
+      "operation_room_wired": true,
+      "backbone_wired": true,
+      "gateway_wired": true,
+      "nervous_system_wired": true,
+      "color_state": "green"
+    },
+    "nervous_system": {
+      "desired_state": "active",
+      "observed_state": "active",
+      "role": "single secure connector fabric",
+      "transport": "mcp-loopback",
+      "route_target": "vxstation.bridge.dispatch",
+      "required_bridge_nodes_minimum": 4,
+      "legacy_active_stack_lanes": 8,
+      "legacy_reserved_nervous_system_slots": 5,
+      "required_connector_total": 4,
+      "connector_green_total": 4,
+      "connector_red_total": 0,
+      "declared_bridge_nodes": 4,
+      "healthy_bridge_nodes": 4,
+      "connectors": [
+        {
+          "connector_id": "agentgateway-control",
+          "node_id": "agentgateway-control",
+          "name": "agentgateway control",
+          "role": "single command exit",
+          "install_inside": "VXSTATION",
+          "transport": "loopback",
+          "endpoint": "http://127.0.0.1:46080",
+          "required_capability_total": 2,
+          "missing_capabilities": [],
+          "expected_service_name": "vxstation-agentgateway",
+          "observed_service_name": "vxstation-agentgateway",
+          "observed_status": "online",
+          "color_state": "green",
+          "detail": "vxstation-agentgateway"
+        },
+        {
+          "connector_id": "mcp-linux-admin-local",
+          "node_id": "mcp-linux-admin-local",
+          "name": "mcp linux admin",
+          "role": "power and service control",
+          "install_inside": "VXSTATION",
+          "transport": "loopback",
+          "endpoint": "http://127.0.0.1:8877",
+          "required_capability_total": 2,
+          "missing_capabilities": [],
+          "expected_service_name": "mcp-linux-admin",
+          "observed_service_name": "mcp-linux-admin",
+          "observed_status": "online",
+          "color_state": "green",
+          "detail": "mcp-linux-admin"
+        },
+        {
+          "connector_id": "mcp-time-calendar-ai-room",
+          "node_id": "mcp-time-calendar-ai-room",
+          "name": "mcp time calendar",
+          "role": "time/date/calendar state",
+          "install_inside": "VXSTATION",
+          "transport": "loopback",
+          "endpoint": "http://127.0.0.1:8792",
+          "required_capability_total": 2,
+          "missing_capabilities": [],
+          "expected_service_name": "mcp-time-calendar-agent",
+          "observed_service_name": "mcp-time-calendar-agent",
+          "observed_status": "online",
+          "color_state": "green",
+          "detail": "mcp-time-calendar-agent"
+        },
+        {
+          "connector_id": "mcp-voice-local",
+          "node_id": "mcp-voice-local",
+          "name": "mcp voice",
+          "role": "voice and audio lane",
+          "install_inside": "VXSTATION",
+          "transport": "loopback",
+          "endpoint": "http://127.0.0.1:8790",
+          "required_capability_total": 2,
+          "missing_capabilities": [],
+          "expected_service_name": "mcp-voice-agent",
+          "observed_service_name": "mcp-voice-agent",
+          "observed_status": "online",
+          "color_state": "green",
+          "detail": "mcp-voice-agent"
+        }
+      ],
+      "color_state": "green"
+    },
+    "engine_total": 20,
+    "pending_install_total": 0,
+    "green_total": 20,
+    "red_total": 0,
+    "color_state": "green",
+    "engines": [
+      {
+        "engine_id": "ceo_dispatch",
+        "name": "CEO Dispatcher",
+        "class": "control",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "policy_router",
+        "name": "Policy Router",
+        "class": "governance",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/logic_adapter.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "state_synthesizer",
+        "name": "State Synthesizer",
+        "class": "orchestration",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "cross_room_coordinator",
+        "name": "Cross Room Coordinator",
+        "class": "orchestration",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "decision_support",
+        "name": "Decision Support",
+        "class": "reasoning",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "mcp_governor",
+        "name": "MCP Governor",
+        "class": "protocol",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/mcp_connector_bindings.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "rag_memory",
+        "name": "RAG Memory",
+        "class": "memory",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "event_bus_intel",
+        "name": "Event Bus Intelligence",
+        "class": "stream",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "ops_dispatch",
+        "name": "Operations Dispatch",
+        "class": "operations",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "mcp-linux-admin-local",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "commercial_dispatch",
+        "name": "Commercial Dispatch",
+        "class": "commercial",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "feedback_dispatch",
+        "name": "Feedback Dispatch",
+        "class": "feedback",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "archive_dispatch",
+        "name": "Archive Dispatch",
+        "class": "archive",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "time_calendar_core",
+        "name": "Time Calendar Core",
+        "class": "time",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/mcp_connector_bindings.json",
+        "connector_id": "mcp-time-calendar-ai-room",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "plasma_hd_clock",
+        "name": "Plasma HD Clock",
+        "class": "time",
+        "observed_state": "missing",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "sharp_calendar_engine",
+        "name": "Sharp Calendar Engine",
+        "class": "time",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "voice_audio_core",
+        "name": "Voice Audio Core",
+        "class": "media",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/mcp_connector_bindings.json",
+        "connector_id": "mcp-voice-local",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "video_runtime_core",
+        "name": "Video Runtime Core",
+        "class": "media",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "audit_chain",
+        "name": "Audit Chain",
+        "class": "evidence",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "security_guard",
+        "name": "Security Guard",
+        "class": "security",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/gateway_control.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      },
+      {
+        "engine_id": "cloud_target_orchestrator",
+        "name": "Cloud Target Orchestrator",
+        "class": "cloud",
+        "observed_state": "active",
+        "color_state": "green",
+        "install_inside": "VXSTATION",
+        "install_manifest": "infra/szh_central_brain/install.manifest.json",
+        "connector_id": "agentgateway-control",
+        "transport": "loopback"
+      }
+    ]
+  },
+  "feedback_room_audit_tail": [
+    "{\"timestamp\":\"2026-04-04T23:53:07Z\",\"event\":\"feedback.snapshot\",\"details\":\"/home/t79/KITTY/FEEDBACK_CLOUD_VYRDX_ROOM/evidence_linked_room_state/snapshots/latest_snapshot.txt\"}",
+    "{\"timestamp\":\"2026-04-19T03:35:17Z\",\"event\":\"feedback.snapshot\",\"details\":\"/home/t79/KITTY/FEEDBACK_CLOUD_VYRDX_ROOM/evidence_linked_room_state/snapshots/latest_snapshot.txt\"}"
+  ]
+}

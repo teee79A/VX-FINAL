@@ -1,0 +1,45 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="ARCHIVING_ROOM" {
+        pane split_direction="Horizontal" {
+            pane size="40%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archive_room_overview.sh"
+            pane split_direction="Vertical" {
+                pane size="48%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archive_timeline.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archive_integrity_check.sh"
+            }
+        }
+    }
+
+    tab name="ARCHIVE_RECORDS" {
+        pane split_direction="Vertical" {
+            pane size="34%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archive_frozen_records.sh"
+            pane split_direction="Horizontal" {
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archive_signed_logs.sh"
+                pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archive_rollback_state.sh"
+            }
+        }
+    }
+
+    tab name="ARCHIVE_BASELINES" {
+        pane split_direction="Horizontal" {
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archive_baselines.sh"
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archive_change_history.sh"
+        }
+    }
+
+    tab name="ARCHIVE_EVIDENCE" {
+        pane split_direction="Vertical" {
+            pane size="65%" command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archive_evidence_viewer.sh"
+            pane command="/home/t79/KITTY/shell/layouts/zellij/launchers/launch_archive_operator_actions.sh"
+        }
+    }
+}

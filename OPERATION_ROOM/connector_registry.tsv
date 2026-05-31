@@ -1,0 +1,7 @@
+connector_id	type	source	target	state	room_binding
+command_bus_connector	command_bus	module wrappers	dispatch layer	active	OPERATION_ROOM
+mcp_local_loopback	protocol	127.0.0.1 local tools	operation engines	active	OPERATION_ROOM
+legacy_ops_registry	registry	operations_room registry	operation room state	active	OPERATION_ROOM
+ops_monitoring_feed	monitoring	operations_room monitoring	status dashboards	active	OPERATION_ROOM
+kitty_zellij_panel_surface	ui	kitty terminal	zellij operation tabs	active	OPERATION_ROOM
+zsh_automation_bridge	shell	oh-my-zsh + /home/t79/KITTY/shell/zsh/vxstation-automation-hub.zsh	outcome-driven SOP commands and handoff automation	active	OPERATION_ROOM

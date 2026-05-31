@@ -1,0 +1,29 @@
+Codemap Diff Report — 2026-04-17
+==================================
+
+Scan: 142 .ts source files across 15 modules
+
+Files Updated:
+  docs/CODEMAPS/architecture.md  — refreshed timestamp, file count 108→142
+  docs/CODEMAPS/backend.md       — corrected 8 route names to match server/index.ts
+                                   corrected line counts for consolab/authority.ts (223),
+                                   consolab/heartbeat.ts (200), consolab/token-refresh-server.ts (173),
+                                   ENGINES/ceo/index.ts (~2650)
+                                   added POST /api/heartbeat/register route
+  docs/CODEMAPS/dependencies.md  — refreshed timestamp, file count
+
+Files Created:
+  docs/CODEMAPS/data.md          — NEW: evidence chain, VYRDX state files, configs,
+                                   token/key inventory, degraded state files,
+                                   Redis streams, ConsoLab evidence
+
+No Files Removed.
+
+Architecture Changes Since Last Scan:
+  - evidence/jsonl.sink.ts now uses serialized write queue (writeQueue promise chain)
+  - evidence/evidence.writer.ts now wraps backbone insert in try/catch for desync detection
+  - command-bus/command.bus.ts reordered evidence write before backbone accept
+  - ENGINES/infra/index.ts added input validation allowlists (4 engines)
+  - ENGINES/ceo/index.ts replaced shell injection vectors with fs.statfs() and execFile()
+
+Staleness: All codemaps current as of this scan.

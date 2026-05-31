@@ -1,0 +1,22 @@
+# Cloudflare Tunnel config for vyrdx.vyrdon.com → VXSTATION
+# Place at /etc/cloudflared/config.yml on the droplet.
+# Start with: cloudflared tunnel run vyrdx-vyrdon
+
+tunnel: vyrdx-vyrdon
+credentials-file: /etc/cloudflared/creds.json
+
+ingress:
+  - hostname: vyrdx.vyrdon.com
+    service: http://127.0.0.1:7800
+    originRequest:
+      noTLSVerify: false
+      connectTimeout: 10s
+      keepAliveTimeout: 90s
+
+  - hostname: vyrdx.vyrdon.com
+    path: /ws
+    service: ws://127.0.0.1:7800
+    originRequest:
+      noTLSVerify: false
+
+  - service: http_status:404
