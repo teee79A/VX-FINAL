@@ -1,6 +1,0 @@
-service	endpoint_or_scope	start_mode	room_binding
-n8n	http://127.0.0.1:5678	on_demand	FEEDBACK_CLOUD_VYRDX_ROOM
-clickhouse	http://127.0.0.1:8123	on_demand	FEEDBACK_CLOUD_VYRDX_ROOM
-qdrant	http://127.0.0.1:6333	on_demand	FEEDBACK_CLOUD_VYRDX_ROOM
-agentgateway	http://127.0.0.1:46080	on_demand	FEEDBACK_CLOUD_VYRDX_ROOM
-netdata	http://127.0.0.1:19999	on_demand	FEEDBACK_CLOUD_VYRDX_ROOM

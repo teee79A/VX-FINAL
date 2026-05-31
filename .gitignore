@@ -55,16 +55,38 @@ data/cloud-monitor.ndjson
 vyrden-airoom/evidence/
 vyrden-airoom/agents/*/evidence/
 
-# VYRDX is separate; do not include old VYRDX app/site/runtime in VX-FINAL
-packages/vyrdx-app/
-server/vyrdx/
 vyrdx/
-vyrdx-bridge/
 vyrdx-static/
-VYRDX_*.md
+.worktrees/
+.clinerules/
+*vyrdx*
+*landing*
 
-# Large media should not live in source repo
+# No source-repo media
 *.mp4
 *.mov
 *.avi
 *.webm
+*.mkv
+
+# No secrets/runtime state
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+coverage/
+logs/
+*.log
+evidence/
+runtime/
+tmp/
+.cache/
+.npm/
+.ssh/
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx

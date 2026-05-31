@@ -15,7 +15,6 @@ import {
 import { IdempotencyGuard } from "./idempotency.guard.js";
 import { ReplayGuard } from "./replay.guard.js";
 import { buildDecisionSnapshot } from "./decision.snapshot.js";
-import { EvidenceLayer } from "../evidence/evidence.layer.js";
 
 interface CommandBusDeps {
   validationLayer?: ValidationLayer;
@@ -43,7 +42,7 @@ export class CommandBus {
     this.backbone = deps.backbone ?? new CommandBackbone();
     this.replayGuard =
       deps.replayGuard ?? new ReplayGuard(this.backbone, new IdempotencyGuard(this.backbone));
-    this.evidenceLayer = deps.evidenceLayer ?? new EvidenceLayer(this.backbone);
+    // this.evidenceLayer = deps.evidenceLayer ?? new EvidenceLayer (VYRDX removed)(this.backbone);
     this.replayWindowMs = deps.replayWindowMs ?? 5 * 60 * 1000;
   }
 

@@ -1,7 +1,6 @@
 import { createHash, randomUUID } from 'node:crypto';
 import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { recordLaunchEvent } from '../../../server/vyrdx/domain/launch-events.js';
 
 export type FlyerChannel = 'email';
 

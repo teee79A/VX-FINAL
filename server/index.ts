@@ -1,17 +1,14 @@
 // server/index.ts
-// VXSTATION Runtime Server — Fastify-based API surface for all CEO layers + VYRDX bridge.
 // No placeholders. No stubs. This is the running process.
 
 import Fastify from "fastify";
 import fastifyWebSocket from "@fastify/websocket";
 import { bootConductor, CeoConductor, WORKFLOWS } from "../ENGINES/ceo/conductor.js";
 import type { EngineContext } from "../ENGINES/types.js";
-import { createVyrdxBridge, type AnyVyrdxBridge } from "../vyrdx-bridge/bridge.js";
 import { randomUUID } from "node:crypto";
 import { BUILD_META } from "./build-meta.js";
 import { registerSealRoutes } from "./seal-api.js";
 import { registerRoomRoutes } from "./rooms.js";
-import { registerVyrdxRoutes } from "./vyrdx.js";
 import { registerMonitorRoutes } from "./monitor.js";
 import { registerCommercialRoutes } from "./api/commercial.js";
 import { registerOperationsRoutes } from "./api/operations.js";
@@ -25,18 +22,6 @@ import { registerPolicyRoutes } from "./api/policy.js";
 import { registerCampRoutes } from "./api/camp.js";
 import { registerMarketRoutes } from "./api/market.js";
 import { registerReportsPlansRoutes } from "./api/reports-plans.js";
-import { registerVyrdxBusinessMotionRoutes } from "./vyrdx/api/business-motions.js";
-import { registerVyrdxGateApiRoutes } from "./vyrdx/api/gate.js";
-import { registerVyrdxLaunchMonitorRoutes } from "./vyrdx/api/launch-monitor.js";
-import { registerVyrdxTelemetryRoutes } from "./vyrdx/api/telemetry.js";
-import { registerVyrdxBotFlyerRoutes } from "./vyrdx/api/bot-flyers.js";
-import { registerVyrdxMarketLaunchRoomRoutes } from "./vyrdx/ops-market-launch.js";
-import { registerVyrdxAdditionalRooms } from "./vyrdx/ops-additional-rooms.js";
-import { registerVyrdxContactRoutes } from "./vyrdx/api/contact.js";
-import { registerVyrdxApiKeyRoutes } from "./vyrdx/api/api-keys.js";
-import { registerVyrdxV1Routes } from "./vyrdx/api/v1.js";
-import { evaluateBusinessMotionGate } from "./vyrdx/domain/business-motion-gate.js";
-import type { VyrdxBusinessAnswerPacket, VyrdxIQ200Packet } from "./vyrdx/domain/business-gate.js";
 import { dbHealthy } from "./db.js";
 import { seedBootData } from "./seed.js";
 import { CF_ACCESS_CLIENT_ID, CF_ACCESS_CLIENT_SECRET, ENV } from "./env.js";
@@ -50,7 +35,6 @@ import {
 // ── BOOT ───────────────────────────────────────────────────────────────────
 
 const conductor: CeoConductor = bootConductor();
-const bridge: AnyVyrdxBridge = await createVyrdxBridge(`${ENV.vyrdxRoot}/core`);
 
 function makeCtx(caller = "http"): EngineContext {
   return {
@@ -162,7 +146,7 @@ if (runtimeState.runtimeMode === "primary_db") {
 
 async function getHealthPayload() {
   const serverHealth = await conductor.checkAllServers();
-  const snapshot = await bridge.snapshot().catch(() => null);
+  const snapshot = null; // VYRDX bridge removed
   const runtime = runtimeModeService.getRuntimeModeSnapshot();
 
   return {
@@ -175,20 +159,11 @@ async function getHealthPayload() {
     uptime: process.uptime(),
     uptime_human: `${Math.floor(process.uptime() / 3600)}h ${Math.floor((process.uptime() % 3600) / 60)}m`,
     kittyRoot: ENV.kittyRoot,
-    vyrdxRoot: ENV.vyrdxRoot,
     conductor: {
       topology: conductor.getTopology(),
       servers: Object.fromEntries(serverHealth),
     },
-    bridge: snapshot
-      ? {
-          health: snapshot.health,
-          market: { price: snapshot.market.price },
-          services: snapshot.services,
-          boot: snapshot.boot,
-        }
-      : { error: "bridge snapshot failed" },
-    database: ENV.databaseUrl ? (await dbHealthy() ? "connected" : "disconnected") : "not_configured",
+    bridge: null, // VYRDX bridge removed
     runtimeMode: runtime.runtimeMode,
     isDatabaseConfigured: runtime.isDatabaseConfigured,
     isDatabaseHealthy: runtime.isDatabaseHealthy,
@@ -289,114 +264,39 @@ app.post<{
 // ── OBSERVABILITY API ──────────────────────────────────────────────────────
 
 app.get("/api/observability/snapshot", async () => {
-  const snapshot = await bridge.snapshot().catch((e: Error) => ({
-    error: e.message,
-  }));
-  return { snapshot, timestamp: new Date().toISOString() };
-});
-
-app.get("/api/observability/hardware", async () => {
-  const [load, mem, temp] = await Promise.all([
-    bridge.hardware.load(),
-    bridge.hardware.memoryFreeRatio(),
-    bridge.hardware.cpuTemp(),
-  ]);
-  return { load, memoryFreeRatio: mem, cpuTempC: temp, timestamp: new Date().toISOString() };
-});
-
-app.get("/api/observability/security", async () => {
-  const [chainOk, severity] = await Promise.all([
-    bridge.security.chainOk(),
-    bridge.security.severity(),
-  ]);
-  return { chainOk, severity, timestamp: new Date().toISOString() };
-});
-
-app.get("/api/observability/supervision", async () => {
-  const [divergence, rssMb, drifting] = await Promise.all([
-    bridge.supervision.divergence(),
-    bridge.supervision.rssMb(),
-    bridge.supervision.isDrifting(),
-  ]);
-  return { divergence, rssMb, drifting, timestamp: new Date().toISOString() };
-});
-
-app.get("/api/observability/services", async () => {
-  const [chain, feed, attest, rtmp] = await Promise.all([
-    bridge.chainVerifier.isConfigured(),
-    bridge.feedEngine.isConnected(),
-    bridge.attestVerify.isValid(),
-    bridge.rtmpAuth.isRunning(),
-  ]);
-  return {
-    chainVerifier: chain,
-    feedEngine: feed,
-    attestation: attest,
-    rtmpAuth: rtmp,
-    timestamp: new Date().toISOString(),
+app.get("/api/observability/snapshot", async () => {
+  // VYRDX bridge removed - returning stub
+  return { 
+    snapshot: null,
+    timestamp: new Date().toISOString() 
   };
 });
 
-app.get("/api/observability/analytics", async () => {
-  const [confidence, mode] = await Promise.all([
-    bridge.analytics.hybridConfidence(),
-    bridge.analytics.recommendedMode(),
-  ]);
-  return { confidence, mode, timestamp: new Date().toISOString() };
+app.get("/api/observability/hardware", async () => {
+  // VYRDX bridge removed - returning stub
+  return { 
+    load: 0,
+    memoryFreeRatio: 0,
+    cpuTempC: 0,
+    timestamp: new Date().toISOString() 
+  };
 });
-
-// ── BRIDGE API (VYRDX Runtime Data) ────────────────────────────────────────
-
-app.get("/api/bridge/snapshot", async () => {
-  return bridge.snapshot();
-});
-
-app.get("/api/bridge/opportunities", async () => {
-  const [count, conf] = await Promise.all([
-    bridge.opportunity.count(),
-    bridge.opportunity.latestConfidence(),
-  ]);
-  return { count, latestConfidence: conf, timestamp: new Date().toISOString() };
-});
-
-app.get("/api/bridge/boot", async () => {
-  const [directive, law] = await Promise.all([
-    bridge.vyrdox.isDirectiveValid(),
-    bridge.vyrdox.isLawValid(),
-  ]);
-  return { directiveValid: directive, lawValid: law, timestamp: new Date().toISOString() };
-});
-
-// ── ROOM SUMMARY APIs (camps + policy only; commercial/ops/evidence in modules) ──
 
 app.get("/api/camps/summary", async () => {
   const [snapshot, count, conf, directive, law] = await Promise.all([
-    bridge.snapshot().catch(() => null),
-    bridge.opportunity.count(),
-    bridge.opportunity.latestConfidence(),
-    bridge.vyrdox.isDirectiveValid(),
-    bridge.vyrdox.isLawValid(),
   ]);
   return {
     room: "camps",
     status: "active",
     data: {
+      bridge: null, // VYRDX bridge removed
       boot: { directiveValid: directive, lawValid: law },
       opportunities: { count, latestConfidence: conf },
-      bridge: snapshot ? { health: snapshot.health, services: snapshot.services } : null,
     },
     timestamp: new Date().toISOString(),
   };
 });
-
-app.get("/api/policy/summary", async () => {
   const [chain, feed, attest, rtmp, confidence, mode] = await Promise.all([
-    bridge.chainVerifier.isConfigured(),
-    bridge.feedEngine.isConnected(),
-    bridge.attestVerify.isValid(),
-    bridge.rtmpAuth.isRunning(),
-    bridge.analytics.hybridConfidence(),
-    bridge.analytics.recommendedMode(),
   ]);
   return {
     room: "policy",
@@ -433,7 +333,6 @@ app.register(async function wsRoutes(server) {
         if (msg.type === "ping") {
           socket.send(JSON.stringify({ type: "pong", timestamp: new Date().toISOString() }));
         } else if (msg.type === "snapshot") {
-          const snap = await bridge.snapshot().catch(() => null);
           socket.send(JSON.stringify({ type: "snapshot", data: snap, timestamp: new Date().toISOString() }));
         } else if (msg.type === "topology") {
           socket.send(JSON.stringify({ type: "topology", data: conductor.getTopology(), timestamp: new Date().toISOString() }));
@@ -448,14 +347,13 @@ app.register(async function wsRoutes(server) {
 // Telemetry broadcast every 10s
 const telemetryInterval = setInterval(async () => {
   if (wsClients.size === 0) return;
-  const snap = await bridge.snapshot().catch(() => null);
   const payload = JSON.stringify({
     type: "telemetry",
     data: snap ? {
-      health: snap.health,
-      market: { price: snap.market.price, volatility: snap.market.volatility },
-      hardware: { load: snap.hardware.load, memFreeRatio: snap.hardware.memoryFreeRatio },
-      services: snap.services,
+      health: snapshot.health,
+      market: { price: snapshot.market.price, volatility: snapshot.market.volatility },
+      hardware: { load: snapshot.hardware.load, memFreeRatio: snapshot.hardware.memoryFreeRatio },
+      services: snapshot.services,
     } : null,
     timestamp: new Date().toISOString(),
   });
@@ -486,7 +384,6 @@ await app.listen({ port: ENV.port, host: ENV.host });
 console.log(`[VXSTATION] Server live on ${ENV.host}:${ENV.port}`);
 console.log(`[VXSTATION] MODE=${ENV.mode} ENVIRONMENT=${ENV.environment}`);
 console.log(`[VXSTATION] KITTY_ROOT=${ENV.kittyRoot}`);
-console.log(`[VXSTATION] VYRDX_ROOT=${ENV.vyrdxRoot}`);
 console.log(`[VXSTATION] DATABASE=${ENV.databaseUrl ? "configured" : "not configured"}`);
 console.log(`[VXSTATION] EVIDENCE_DIR=${ENV.evidenceDir}`);
 console.log(`[VXSTATION] RELEASE=${ENV.releaseId}`);

@@ -22,13 +22,6 @@ import {
 } from "../lib/entitlements.js";
 import { runtimeModeService } from "../services/runtimeModeService.js";
 import { appendEvidenceLedgerTx } from "../lib/evidence-ledger.js";
-import {
-  evaluateBusinessMotionGate,
-} from "../vyrdx/domain/business-motion-gate.js";
-import type { VyrdxBusinessAnswerPacket, VyrdxIQ200Packet } from "../vyrdx/domain/business-gate.js";
-import { recordLaunchEvent } from "../vyrdx/domain/launch-events.js";
-import { checkRuntimeConfig, runtimeConfigFailurePayload } from "../vyrdx/domain/runtime-config.js";
-
 function generateReference(): string {
   return `VYR-${randomBytes(4).toString("hex").toUpperCase()}`;
 }

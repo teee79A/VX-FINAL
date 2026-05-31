@@ -1,8 +1,0 @@
-engine_id	role	binary_or_home	state	primary_use
-hookdeck_ingress	webhook ingress relay	/home/t79/.local/bin/hookdeck	active	inbound cloud feedback intake
-n8n_processing	workflow engine	/home/t79/.local/bin/n8n	standby	feedback routing and processing
-tenderly_alerts	blockchain event alerts	/home/t79/.local/bin/tenderly	active	transaction and state-change signals
-radar_signal	live signal radar	/home/t79/KITTY/bin/vxstation_radar.py	active	realtime signal watch
-octosql_query	data federation query	/home/t79/.local/bin/octosql	active	multi-source feedback queries
-steampipe_query	plugin data query	/home/t79/.local/bin/steampipe	active	ops/cloud source aggregation
-mcp_cli	local tool bridge	/home/t79/KITTY/.venv/bin/mcp	active	local MCP tool execution
