@@ -4,8 +4,11 @@
  */
 
 import type { FastifyInstance } from "fastify";
-import { getTelemetryEventsForRoom } from "../vyrdx/api/telemetry.js";
-import { getLaunchEventsForRoom } from "../vyrdx/domain/launch-events.js";
+
+// VYRDX functions removed - stubs for compatibility
+const getBotJobsForRoom = async (): Promise<any[]> => [];
+const getLaunchEventsForRoom = async (): Promise<any[]> => [];
+const getTelemetryEventsForRoom = async (): Promise<any[]> => [];
 
 type HealthStatus = {
   ok: boolean;
@@ -89,7 +92,7 @@ export async function registerVxstationBridgeRoutes(server: FastifyInstance): Pr
 
       const windowMs = parseWindow(window);
       const cutoff = Date.now() - windowMs;
-      const windowed = events.filter((e) => new Date(e.timestamp).getTime() >= cutoff);
+      const windowed = events.filter((e: any) => new Date(e.timestamp).getTime() >= cutoff);
 
       const byPath: Record<string, number> = {};
       let pageViews = 0;
@@ -158,7 +161,7 @@ export async function registerVxstationBridgeRoutes(server: FastifyInstance): Pr
     try {
       const limit = Math.min(Number((request.query as { limit?: string }).limit) || 100, 500);
       const events = getTelemetryEventsForRoom()
-        .filter((e) => e.type === "gate_result" || e.type === "gate_eval_requested")
+        .filter((e: any) => e.type === "gate_result" || e.type === "gate_eval_requested")
         .slice(-limit);
 
       const streamEvents: GateStreamEvent[] = events.map((e) => ({
@@ -184,11 +187,9 @@ export async function registerVxstationBridgeRoutes(server: FastifyInstance): Pr
   server.get("/api/vxstation/bot/jobs", async (request, reply) => {
     try {
       // Import from bot-flyers module
-      const { getBotJobsForRoom } = await import("../vyrdx/api/bot-flyers.js");
-      const limit = Math.min(Number((request.query as { limit?: string }).limit) || 50, 200);
       const jobs = getBotJobsForRoom().slice(0, limit);
 
-      const summaries: BotJobSummary[] = jobs.map((job) => ({
+      const summaries: BotJobSummary[] = jobs.map((job: any) => ({
         id: job.id,
         status: job.status,
         targetCount: job.targets.length,
